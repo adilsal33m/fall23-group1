@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA02F7C32AF8169C003DF5E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7C22AF8169C003DF5E7 /* AppDelegate.swift */; };
+		FA02F7C52AF8169C003DF5E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7C42AF8169C003DF5E7 /* SceneDelegate.swift */; };
+		FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7C62AF8169C003DF5E7 /* ViewController.swift */; };
+		FA02F7CA2AF8169C003DF5E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA02F7C82AF8169C003DF5E7 /* Main.storyboard */; };
+		FA02F7CD2AF8169C003DF5E7 /* MarkMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7CB2AF8169C003DF5E7 /* MarkMate.xcdatamodeld */; };
+		FA02F7CF2AF8169E003DF5E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA02F7CE2AF8169E003DF5E7 /* Assets.xcassets */; };
+		FA02F7D22AF8169E003DF5E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA02F7D02AF8169E003DF5E7 /* LaunchScreen.storyboard */; };
+		FA02F7DD2AF8169E003DF5E7 /* MarkMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7DC2AF8169E003DF5E7 /* MarkMateTests.swift */; };
+		FA02F7E72AF8169E003DF5E7 /* MarkMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */; };
+		FA02F7E92AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA02F7D92AF8169E003DF5E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA02F7B72AF8169B003DF5E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA02F7BE2AF8169C003DF5E7;
+			remoteInfo = MarkMate;
+		};
+		FA02F7E32AF8169E003DF5E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA02F7B72AF8169B003DF5E7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA02F7BE2AF8169C003DF5E7;
+			remoteInfo = MarkMate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA02F7BF2AF8169C003DF5E7 /* MarkMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA02F7C22AF8169C003DF5E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA02F7C42AF8169C003DF5E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FA02F7C62AF8169C003DF5E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA02F7C92AF8169C003DF5E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA02F7CC2AF8169C003DF5E7 /* MarkMate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MarkMate.xcdatamodel; sourceTree = "<group>"; };
+		FA02F7CE2AF8169E003DF5E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA02F7D12AF8169E003DF5E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA02F7D32AF8169E003DF5E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA02F7D82AF8169E003DF5E7 /* MarkMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA02F7DC2AF8169E003DF5E7 /* MarkMateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateTests.swift; sourceTree = "<group>"; };
+		FA02F7E22AF8169E003DF5E7 /* MarkMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITests.swift; sourceTree = "<group>"; };
+		FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA02F7BC2AF8169C003DF5E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA02F7D52AF8169E003DF5E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA02F7DF2AF8169E003DF5E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA02F7B62AF8169B003DF5E7 = {
+			isa = PBXGroup;
+			children = (
+				FA02F7C12AF8169C003DF5E7 /* MarkMate */,
+				FA02F7DB2AF8169E003DF5E7 /* MarkMateTests */,
+				FA02F7E52AF8169E003DF5E7 /* MarkMateUITests */,
+				FA02F7C02AF8169C003DF5E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA02F7C02AF8169C003DF5E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA02F7BF2AF8169C003DF5E7 /* MarkMate.app */,
+				FA02F7D82AF8169E003DF5E7 /* MarkMateTests.xctest */,
+				FA02F7E22AF8169E003DF5E7 /* MarkMateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA02F7C12AF8169C003DF5E7 /* MarkMate */ = {
+			isa = PBXGroup;
+			children = (
+				FA02F7C22AF8169C003DF5E7 /* AppDelegate.swift */,
+				FA02F7C42AF8169C003DF5E7 /* SceneDelegate.swift */,
+				FA02F7C62AF8169C003DF5E7 /* ViewController.swift */,
+				FA02F7C82AF8169C003DF5E7 /* Main.storyboard */,
+				FA02F7CE2AF8169E003DF5E7 /* Assets.xcassets */,
+				FA02F7D02AF8169E003DF5E7 /* LaunchScreen.storyboard */,
+				FA02F7D32AF8169E003DF5E7 /* Info.plist */,
+				FA02F7CB2AF8169C003DF5E7 /* MarkMate.xcdatamodeld */,
+			);
+			path = MarkMate;
+			sourceTree = "<group>";
+		};
+		FA02F7DB2AF8169E003DF5E7 /* MarkMateTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA02F7DC2AF8169E003DF5E7 /* MarkMateTests.swift */,
+			);
+			path = MarkMateTests;
+			sourceTree = "<group>";
+		};
+		FA02F7E52AF8169E003DF5E7 /* MarkMateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */,
+				FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */,
+			);
+			path = MarkMateUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA02F7BE2AF8169C003DF5E7 /* MarkMate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA02F7EC2AF8169E003DF5E7 /* Build configuration list for PBXNativeTarget "MarkMate" */;
+			buildPhases = (
+				FA02F7BB2AF8169C003DF5E7 /* Sources */,
+				FA02F7BC2AF8169C003DF5E7 /* Frameworks */,
+				FA02F7BD2AF8169C003DF5E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarkMate;
+			productName = MarkMate;
+			productReference = FA02F7BF2AF8169C003DF5E7 /* MarkMate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA02F7D72AF8169E003DF5E7 /* MarkMateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA02F7EF2AF8169E003DF5E7 /* Build configuration list for PBXNativeTarget "MarkMateTests" */;
+			buildPhases = (
+				FA02F7D42AF8169E003DF5E7 /* Sources */,
+				FA02F7D52AF8169E003DF5E7 /* Frameworks */,
+				FA02F7D62AF8169E003DF5E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA02F7DA2AF8169E003DF5E7 /* PBXTargetDependency */,
+			);
+			name = MarkMateTests;
+			productName = MarkMateTests;
+			productReference = FA02F7D82AF8169E003DF5E7 /* MarkMateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA02F7E12AF8169E003DF5E7 /* MarkMateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA02F7F22AF8169E003DF5E7 /* Build configuration list for PBXNativeTarget "MarkMateUITests" */;
+			buildPhases = (
+				FA02F7DE2AF8169E003DF5E7 /* Sources */,
+				FA02F7DF2AF8169E003DF5E7 /* Frameworks */,
+				FA02F7E02AF8169E003DF5E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA02F7E42AF8169E003DF5E7 /* PBXTargetDependency */,
+			);
+			name = MarkMateUITests;
+			productName = MarkMateUITests;
+			productReference = FA02F7E22AF8169E003DF5E7 /* MarkMateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA02F7B72AF8169B003DF5E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					FA02F7BE2AF8169C003DF5E7 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					FA02F7D72AF8169E003DF5E7 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = FA02F7BE2AF8169C003DF5E7;
+					};
+					FA02F7E12AF8169E003DF5E7 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = FA02F7BE2AF8169C003DF5E7;
+					};
+				};
+			};
+			buildConfigurationList = FA02F7BA2AF8169B003DF5E7 /* Build configuration list for PBXProject "MarkMate" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA02F7B62AF8169B003DF5E7;
+			productRefGroup = FA02F7C02AF8169C003DF5E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA02F7BE2AF8169C003DF5E7 /* MarkMate */,
+				FA02F7D72AF8169E003DF5E7 /* MarkMateTests */,
+				FA02F7E12AF8169E003DF5E7 /* MarkMateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA02F7BD2AF8169C003DF5E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA02F7D22AF8169E003DF5E7 /* LaunchScreen.storyboard in Resources */,
+				FA02F7CF2AF8169E003DF5E7 /* Assets.xcassets in Resources */,
+				FA02F7CA2AF8169C003DF5E7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA02F7D62AF8169E003DF5E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA02F7E02AF8169E003DF5E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA02F7BB2AF8169C003DF5E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */,
+				FA02F7C32AF8169C003DF5E7 /* AppDelegate.swift in Sources */,
+				FA02F7C52AF8169C003DF5E7 /* SceneDelegate.swift in Sources */,
+				FA02F7CD2AF8169C003DF5E7 /* MarkMate.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA02F7D42AF8169E003DF5E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA02F7DD2AF8169E003DF5E7 /* MarkMateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA02F7DE2AF8169E003DF5E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA02F7E92AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift in Sources */,
+				FA02F7E72AF8169E003DF5E7 /* MarkMateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA02F7DA2AF8169E003DF5E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA02F7BE2AF8169C003DF5E7 /* MarkMate */;
+			targetProxy = FA02F7D92AF8169E003DF5E7 /* PBXContainerItemProxy */;
+		};
+		FA02F7E42AF8169E003DF5E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA02F7BE2AF8169C003DF5E7 /* MarkMate */;
+			targetProxy = FA02F7E32AF8169E003DF5E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA02F7C82AF8169C003DF5E7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA02F7C92AF8169C003DF5E7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA02F7D02AF8169E003DF5E7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA02F7D12AF8169E003DF5E7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA02F7EA2AF8169E003DF5E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA02F7EB2AF8169E003DF5E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA02F7ED2AF8169E003DF5E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarkMate/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Maaz.Shamim.MarkMate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA02F7EE2AF8169E003DF5E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarkMate/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Maaz.Shamim.MarkMate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA02F7F02AF8169E003DF5E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Maaz.Shamim.MarkMateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarkMate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MarkMate";
+			};
+			name = Debug;
+		};
+		FA02F7F12AF8169E003DF5E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Maaz.Shamim.MarkMateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MarkMate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MarkMate";
+			};
+			name = Release;
+		};
+		FA02F7F32AF8169E003DF5E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Maaz.Shamim.MarkMateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MarkMate;
+			};
+			name = Debug;
+		};
+		FA02F7F42AF8169E003DF5E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Maaz.Shamim.MarkMateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MarkMate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA02F7BA2AF8169B003DF5E7 /* Build configuration list for PBXProject "MarkMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA02F7EA2AF8169E003DF5E7 /* Debug */,
+				FA02F7EB2AF8169E003DF5E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA02F7EC2AF8169E003DF5E7 /* Build configuration list for PBXNativeTarget "MarkMate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA02F7ED2AF8169E003DF5E7 /* Debug */,
+				FA02F7EE2AF8169E003DF5E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA02F7EF2AF8169E003DF5E7 /* Build configuration list for PBXNativeTarget "MarkMateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA02F7F02AF8169E003DF5E7 /* Debug */,
+				FA02F7F12AF8169E003DF5E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA02F7F22AF8169E003DF5E7 /* Build configuration list for PBXNativeTarget "MarkMateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA02F7F32AF8169E003DF5E7 /* Debug */,
+				FA02F7F42AF8169E003DF5E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA02F7CB2AF8169C003DF5E7 /* MarkMate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA02F7CC2AF8169C003DF5E7 /* MarkMate.xcdatamodel */,
+			);
+			currentVersion = FA02F7CC2AF8169C003DF5E7 /* MarkMate.xcdatamodel */;
+			path = MarkMate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FA02F7B72AF8169B003DF5E7 /* Project object */;
+}
