@@ -2,7 +2,7 @@
 #### Application Development for Mobile Devices - Fall 23
 
 ## Proposed Idea 
-QuickAuto - On-Demand Vehicle Services	
+MarkMate - A local Attendance App
 
 ## Group Members 
 - Maaz Shamim
