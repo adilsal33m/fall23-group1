@@ -17,6 +17,14 @@
 		FA02F7DD2AF8169E003DF5E7 /* MarkMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7DC2AF8169E003DF5E7 /* MarkMateTests.swift */; };
 		FA02F7E72AF8169E003DF5E7 /* MarkMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */; };
 		FA02F7E92AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */; };
+		FAB723A02B00E50600C73F32 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7239F2B00E50600C73F32 /* PersistentStorage.swift */; };
+		FAB723AB2B020CBE00C73F32 /* Students+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB723A52B020CBE00C73F32 /* Students+CoreDataClass.swift */; };
+		FAB723AC2B020CBE00C73F32 /* Students+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB723A62B020CBE00C73F32 /* Students+CoreDataProperties.swift */; };
+		FAB723AD2B020CBE00C73F32 /* Attendance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB723A72B020CBE00C73F32 /* Attendance+CoreDataClass.swift */; };
+		FAB723AE2B020CBE00C73F32 /* Attendance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB723A82B020CBE00C73F32 /* Attendance+CoreDataProperties.swift */; };
+		FAB723AF2B020CBE00C73F32 /* Courses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB723A92B020CBE00C73F32 /* Courses+CoreDataClass.swift */; };
+		FAB723B02B020CBE00C73F32 /* Courses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB723AA2B020CBE00C73F32 /* Courses+CoreDataProperties.swift */; };
+		FAB723BA2B022A7C00C73F32 /* courseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB723B92B022A7C00C73F32 /* courseRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +59,14 @@
 		FA02F7E22AF8169E003DF5E7 /* MarkMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITests.swift; sourceTree = "<group>"; };
 		FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FAB7239F2B00E50600C73F32 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		FAB723A52B020CBE00C73F32 /* Students+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Students+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FAB723A62B020CBE00C73F32 /* Students+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Students+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FAB723A72B020CBE00C73F32 /* Attendance+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FAB723A82B020CBE00C73F32 /* Attendance+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FAB723A92B020CBE00C73F32 /* Courses+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Courses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FAB723AA2B020CBE00C73F32 /* Courses+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Courses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FAB723B92B022A7C00C73F32 /* courseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = courseRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,7 @@
 		FA02F7C12AF8169C003DF5E7 /* MarkMate */ = {
 			isa = PBXGroup;
 			children = (
+				FAB723942B00E03400C73F32 /* CoreData */,
 				FA02F7C22AF8169C003DF5E7 /* AppDelegate.swift */,
 				FA02F7C42AF8169C003DF5E7 /* SceneDelegate.swift */,
 				FA02F7C62AF8169C003DF5E7 /* ViewController.swift */,
@@ -108,7 +125,6 @@
 				FA02F7CE2AF8169E003DF5E7 /* Assets.xcassets */,
 				FA02F7D02AF8169E003DF5E7 /* LaunchScreen.storyboard */,
 				FA02F7D32AF8169E003DF5E7 /* Info.plist */,
-				FA02F7CB2AF8169C003DF5E7 /* MarkMate.xcdatamodeld */,
 			);
 			path = MarkMate;
 			sourceTree = "<group>";
@@ -128,6 +144,46 @@
 				FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */,
 			);
 			path = MarkMateUITests;
+			sourceTree = "<group>";
+		};
+		FAB723942B00E03400C73F32 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FAB723B62B02274000C73F32 /* Managers */,
+				FA02F7CB2AF8169C003DF5E7 /* MarkMate.xcdatamodeld */,
+				FAB723B32B020D0A00C73F32 /* SupportFiles */,
+				FAB723B22B020CFF00C73F32 /* Repository */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FAB723B22B020CFF00C73F32 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FAB723B92B022A7C00C73F32 /* courseRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FAB723B32B020D0A00C73F32 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FAB723A52B020CBE00C73F32 /* Students+CoreDataClass.swift */,
+				FAB723A62B020CBE00C73F32 /* Students+CoreDataProperties.swift */,
+				FAB723A72B020CBE00C73F32 /* Attendance+CoreDataClass.swift */,
+				FAB723A82B020CBE00C73F32 /* Attendance+CoreDataProperties.swift */,
+				FAB723A92B020CBE00C73F32 /* Courses+CoreDataClass.swift */,
+				FAB723AA2B020CBE00C73F32 /* Courses+CoreDataProperties.swift */,
+				FAB7239F2B00E50600C73F32 /* PersistentStorage.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		FAB723B62B02274000C73F32 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +317,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB723AC2B020CBE00C73F32 /* Students+CoreDataProperties.swift in Sources */,
 				FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */,
 				FA02F7C32AF8169C003DF5E7 /* AppDelegate.swift in Sources */,
 				FA02F7C52AF8169C003DF5E7 /* SceneDelegate.swift in Sources */,
+				FAB723BA2B022A7C00C73F32 /* courseRepository.swift in Sources */,
+				FAB723AD2B020CBE00C73F32 /* Attendance+CoreDataClass.swift in Sources */,
+				FAB723AB2B020CBE00C73F32 /* Students+CoreDataClass.swift in Sources */,
+				FAB723B02B020CBE00C73F32 /* Courses+CoreDataProperties.swift in Sources */,
 				FA02F7CD2AF8169C003DF5E7 /* MarkMate.xcdatamodeld in Sources */,
+				FAB723AE2B020CBE00C73F32 /* Attendance+CoreDataProperties.swift in Sources */,
+				FAB723AF2B020CBE00C73F32 /* Courses+CoreDataClass.swift in Sources */,
+				FAB723A02B00E50600C73F32 /* PersistentStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
