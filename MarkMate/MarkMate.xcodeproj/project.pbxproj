@@ -17,6 +17,8 @@
 		FA02F7DD2AF8169E003DF5E7 /* MarkMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7DC2AF8169E003DF5E7 /* MarkMateTests.swift */; };
 		FA02F7E72AF8169E003DF5E7 /* MarkMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */; };
 		FA02F7E92AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */; };
+		FA65863E2B06C2800085226E /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65863D2B06C2800085226E /* TeacherViewController.swift */; };
+		FA6586402B06D8BC0085226E /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65863F2B06D8BC0085226E /* StudentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		FA02F7E22AF8169E003DF5E7 /* MarkMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITests.swift; sourceTree = "<group>"; };
 		FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA65863D2B06C2800085226E /* TeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
+		FA65863F2B06D8BC0085226E /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		FA02F7C12AF8169C003DF5E7 /* MarkMate */ = {
 			isa = PBXGroup;
 			children = (
+				FA65863A2B06AEED0085226E /* Teacher */,
+				FA6586392B06AEDA0085226E /* Student */,
 				FA02F7C22AF8169C003DF5E7 /* AppDelegate.swift */,
 				FA02F7C42AF8169C003DF5E7 /* SceneDelegate.swift */,
 				FA02F7C62AF8169C003DF5E7 /* ViewController.swift */,
@@ -128,6 +134,38 @@
 				FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */,
 			);
 			path = MarkMateUITests;
+			sourceTree = "<group>";
+		};
+		FA6586392B06AEDA0085226E /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				FA65863C2B06AF120085226E /* Controller */,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
+		FA65863A2B06AEED0085226E /* Teacher */ = {
+			isa = PBXGroup;
+			children = (
+				FA65863B2B06AF040085226E /* Controller */,
+			);
+			path = Teacher;
+			sourceTree = "<group>";
+		};
+		FA65863B2B06AF040085226E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA65863D2B06C2800085226E /* TeacherViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA65863C2B06AF120085226E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FA65863F2B06D8BC0085226E /* StudentViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6586402B06D8BC0085226E /* StudentViewController.swift in Sources */,
 				FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */,
 				FA02F7C32AF8169C003DF5E7 /* AppDelegate.swift in Sources */,
+				FA65863E2B06C2800085226E /* TeacherViewController.swift in Sources */,
 				FA02F7C52AF8169C003DF5E7 /* SceneDelegate.swift in Sources */,
 				FA02F7CD2AF8169C003DF5E7 /* MarkMate.xcdatamodeld in Sources */,
 			);
