@@ -19,6 +19,7 @@
 		FA02F7E92AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */; };
 		FA65863E2B06C2800085226E /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65863D2B06C2800085226E /* TeacherViewController.swift */; };
 		FA6586402B06D8BC0085226E /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65863F2B06D8BC0085226E /* StudentViewController.swift */; };
+		FA8830692B081EA500C11D32 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8830682B081EA500C11D32 /* Student.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA65863D2B06C2800085226E /* TeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
 		FA65863F2B06D8BC0085226E /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		FA8830682B081EA500C11D32 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				FA65863C2B06AF120085226E /* Controller */,
+				FA8830682B081EA500C11D32 /* Student.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				FA02F7C32AF8169C003DF5E7 /* AppDelegate.swift in Sources */,
 				FA65863E2B06C2800085226E /* TeacherViewController.swift in Sources */,
 				FA02F7C52AF8169C003DF5E7 /* SceneDelegate.swift in Sources */,
+				FA8830692B081EA500C11D32 /* Student.swift in Sources */,
 				FA02F7CD2AF8169C003DF5E7 /* MarkMate.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
