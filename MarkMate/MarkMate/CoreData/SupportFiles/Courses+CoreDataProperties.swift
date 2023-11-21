@@ -12,7 +12,6 @@ import CoreData
 
 extension Courses
 {
-
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Courses>
     {
         return NSFetchRequest<Courses>(entityName: "Courses")
@@ -21,14 +20,9 @@ extension Courses
     @NSManaged public var semester: String?
     @NSManaged public var class_nbr: Int32
     @NSManaged public var course_name: String?
-    @NSManaged public var coursesToStudents: NSSet?
+    @NSManaged public var coursesToStudents: Set<Students>?
     @NSManaged public var coursesToAttendance: NSSet?
     
-    func convertToCourse() -> Course
-    {
-        return Course(class_nbr: self.class_nbr, semester: self.semester, course_name: self.course_name)
-    }
-
 }
 
 // MARK: Generated accessors for coursesToStudents
@@ -42,10 +36,10 @@ extension Courses
     @NSManaged public func removeFromCoursesToStudents(_ value: Students)
 
     @objc(addCoursesToStudents:)
-    @NSManaged public func addToCoursesToStudents(_ values: NSSet)
+    @NSManaged public func addToCoursesToStudents(_ values: Set<Students>)
 
     @objc(removeCoursesToStudents:)
-    @NSManaged public func removeFromCoursesToStudents(_ values: NSSet)
+    @NSManaged public func removeFromCoursesToStudents(_ values: Set<Students>)
 
 }
 

@@ -2,7 +2,7 @@
 //  Attendance+CoreDataProperties.swift
 //  MarkMate
 //
-//  Created by Macbook on 13/11/2023.
+//  Created by Macbook on 22/11/2023.
 //
 //
 
@@ -16,8 +16,9 @@ extension Attendance {
         return NSFetchRequest<Attendance>(entityName: "Attendance")
     }
 
-    @NSManaged public var id: UUID?
     @NSManaged public var date: Date?
+    @NSManaged public var id: UUID?
+    @NSManaged public var isPresent: Bool
     @NSManaged public var attendanceToCourses: Courses?
     @NSManaged public var attendanceToStudents: Students?
 

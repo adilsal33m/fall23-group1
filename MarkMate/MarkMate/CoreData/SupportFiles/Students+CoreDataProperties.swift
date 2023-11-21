@@ -2,7 +2,7 @@
 //  Students+CoreDataProperties.swift
 //  MarkMate
 //
-//  Created by Macbook on 13/11/2023.
+//  Created by Macbook on 22/11/2023.
 //
 //
 
@@ -18,25 +18,8 @@ extension Students {
 
     @NSManaged public var erp: Int32
     @NSManaged public var name: String?
-    @NSManaged public var studentsToCourses: NSSet?
     @NSManaged public var studentsToAttendance: NSSet?
-
-}
-
-// MARK: Generated accessors for studentsToCourses
-extension Students {
-
-    @objc(addStudentsToCoursesObject:)
-    @NSManaged public func addToStudentsToCourses(_ value: Courses)
-
-    @objc(removeStudentsToCoursesObject:)
-    @NSManaged public func removeFromStudentsToCourses(_ value: Courses)
-
-    @objc(addStudentsToCourses:)
-    @NSManaged public func addToStudentsToCourses(_ values: NSSet)
-
-    @objc(removeStudentsToCourses:)
-    @NSManaged public func removeFromStudentsToCourses(_ values: NSSet)
+    @NSManaged public var studentsToCourses: Courses?
 
 }
 

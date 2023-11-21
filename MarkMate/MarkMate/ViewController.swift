@@ -30,6 +30,26 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         
         session = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
         session.delegate = self
+        
+        let repo = CourseRepository()
+//        let ans = repo.removeStudent(class_nbr: 5048, student: Student(name: "Maaz", erp: 22792))
+//        print(ans)
+        let result = repo.getAll()
+//        for item in result!
+//        {
+//            print("class_nbr : \(item.class_nbr)")
+//            print("class_name : " + item.course_name)
+//            print("semester : " + item.semester)
+//            print("roster : \(item.roster)")
+//        }
+//        let repo1 = StudentRepository()
+//        let result1 = repo1.getAll()
+//        for item in result1!
+//        {
+//            print("erp : \(item.erp)")
+//            print("name : " + item.name)
+//        }
+        
     }
     
     func sendData(data : String) {

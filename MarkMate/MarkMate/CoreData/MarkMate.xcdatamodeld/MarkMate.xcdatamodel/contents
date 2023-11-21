@@ -3,20 +3,16 @@
     <entity name="Attendance" representedClassName="Attendance" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isPresent" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="attendanceToCourses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Courses" inverseName="coursesToAttendance" inverseEntity="Courses"/>
         <relationship name="attendanceToStudents" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Students" inverseName="studentsToAttendance" inverseEntity="Students"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="id"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
     </entity>
     <entity name="Courses" representedClassName="Courses" syncable="YES">
         <attribute name="class_nbr" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="course_name" optional="YES" attributeType="String"/>
         <attribute name="semester" optional="YES" attributeType="String"/>
-        <relationship name="coursesToAttendance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendance" inverseName="attendanceToCourses" inverseEntity="Attendance"/>
-        <relationship name="coursesToStudents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Students" inverseName="studentsToCourses" inverseEntity="Students"/>
+        <relationship name="coursesToAttendance" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Attendance" inverseName="attendanceToCourses" inverseEntity="Attendance"/>
+        <relationship name="coursesToStudents" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Students" inverseName="studentsToCourses" inverseEntity="Students"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="class_nbr"/>
@@ -26,12 +22,7 @@
     <entity name="Students" representedClassName="Students" syncable="YES">
         <attribute name="erp" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="studentsToAttendance" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attendance" inverseName="attendanceToStudents" inverseEntity="Attendance"/>
-        <relationship name="studentsToCourses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Courses" inverseName="coursesToStudents" inverseEntity="Courses"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="erp"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
+        <relationship name="studentsToAttendance" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Attendance" inverseName="attendanceToStudents" inverseEntity="Attendance"/>
+        <relationship name="studentsToCourses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Courses" inverseName="coursesToStudents" inverseEntity="Courses"/>
     </entity>
 </model>
