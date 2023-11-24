@@ -8,12 +8,22 @@
 import UIKit
 import MultipeerConnectivity
 
+struct courseInfo: Codable {
+    var courseTitle: String
+    var courseERP: Int
+    var attendance_record: [Int]
+}
+
 class AttendanceViewController: UIViewController , MCSessionDelegate, MCBrowserViewControllerDelegate, MCNearbyServiceAdvertiserDelegate {
     
+    let encoder = JSONEncoder()
     var myPeerID: MCPeerID!
     var session: MCSession!
     
-    var myData: String = ""
+    var myData: courseInfo = courseInfo(courseTitle: "IOS DEV", courseERP: 3456, attendance_record: [23, 234, 23, 234, 23])
+    
+    
+    
     var AdvertiserAssisstant: MCNearbyServiceAdvertiser!
     
     @IBOutlet weak var statusLabel: UILabel!
@@ -30,15 +40,13 @@ class AttendanceViewController: UIViewController , MCSessionDelegate, MCBrowserV
         session.delegate = self
     }
     
-    func sendData(data : String, peer: MCPeerID) {
-        print("BRUHHH")
+    func sendData(data : courseInfo, peer: MCPeerID) throws {
+        let jsonData = try encoder.encode(myData)
         if session.connectedPeers.count > 0 {
-            if let textData = data.data(using: .utf8){
-                do {
-                    try session.send(textData, toPeers: [peer], with: .reliable)
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
+            do {
+                try session.send(jsonData, toPeers: [peer], with: .reliable)
+            } catch let error as NSError {
+                print(error.localizedDescription)
             }
         }
     }
@@ -49,7 +57,8 @@ class AttendanceViewController: UIViewController , MCSessionDelegate, MCBrowserV
         AdvertiserAssisstant = MCNearbyServiceAdvertiser(peer: myPeerID, discoveryInfo: nil, serviceType: "MarkMateSession")
         AdvertiserAssisstant.delegate = self
         AdvertiserAssisstant.startAdvertisingPeer()
-        statusLabel.text = "Hosting Session Now..."
+        statusLabel.text = "Active"
+        statusLabel.textColor = .green
     }
     
 //    func joinSession() {
@@ -62,9 +71,16 @@ class AttendanceViewController: UIViewController , MCSessionDelegate, MCBrowserV
 //        joinSession()
 //    }
     
-    @IBAction func PressHost(_ sender: Any) {
+    @IBAction func StartAttendance(_ sender: Any) {
         print("Hosting now...")
         startHosting()
+    }
+    
+    @IBAction func FinishAttendance(_ sender: Any) {
+        session.disconnect()
+        print("Stopped Hosting...")
+        statusLabel.text = "Inactive"
+        statusLabel.textColor = .red
     }
     
 //    @IBAction func PressSend(_ sender: Any) {
@@ -95,7 +111,12 @@ class AttendanceViewController: UIViewController , MCSessionDelegate, MCBrowserV
                 self.myLabel.text = text
             }
         }
-        sendData(data: "Hiiiii", peer: peerID)
+        do{
+            try sendData(data: myData, peer: peerID)
+        } catch {
+            
+        }
+        
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
