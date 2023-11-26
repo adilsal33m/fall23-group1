@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57956A1DA429389A524DAA81 /* Pods_MarkMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7C03508063696221F99D7CD /* Pods_MarkMate.framework */; };
+		6C04AB8FFC0CEBA820C7E73E /* Pods_MarkMate_MarkMateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D0A15B45A532F3473DB458 /* Pods_MarkMate_MarkMateUITests.framework */; };
+		ECCF5EEF440E4015F673802B /* Pods_MarkMateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E1EAB43AF8C3FCAE4CD76EF /* Pods_MarkMateTests.framework */; };
 		FA02F7C32AF8169C003DF5E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7C22AF8169C003DF5E7 /* AppDelegate.swift */; };
 		FA02F7C52AF8169C003DF5E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7C42AF8169C003DF5E7 /* SceneDelegate.swift */; };
 		FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7C62AF8169C003DF5E7 /* ViewController.swift */; };
@@ -17,6 +20,8 @@
 		FA02F7DD2AF8169E003DF5E7 /* MarkMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7DC2AF8169E003DF5E7 /* MarkMateTests.swift */; };
 		FA02F7E72AF8169E003DF5E7 /* MarkMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */; };
 		FA02F7E92AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */; };
+		FA383E252B13C231007C8943 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA383E232B13C231007C8943 /* ViewController1.swift */; };
+		FA383E262B13C231007C8943 /* ViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA383E242B13C231007C8943 /* ViewController1.xib */; };
 		FA62760D2B03F57F009CA02A /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */; };
 		FA6276112B04091D009CA02A /* CONSTANTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6276102B04091D009CA02A /* CONSTANTS.swift */; };
 		FA6276142B048750009CA02A /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6276132B048750009CA02A /* MarkViewController.swift */; };
@@ -40,6 +45,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D76FD1AB5EF64A81595D59A /* Pods-MarkMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarkMate.debug.xcconfig"; path = "Target Support Files/Pods-MarkMate/Pods-MarkMate.debug.xcconfig"; sourceTree = "<group>"; };
+		2F556B824B9F066909756D0A /* Pods-MarkMateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarkMateTests.debug.xcconfig"; path = "Target Support Files/Pods-MarkMateTests/Pods-MarkMateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3E1EAB43AF8C3FCAE4CD76EF /* Pods_MarkMateTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarkMateTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90BDF749EBE00A53F09C715D /* Pods-MarkMateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarkMateTests.release.xcconfig"; path = "Target Support Files/Pods-MarkMateTests/Pods-MarkMateTests.release.xcconfig"; sourceTree = "<group>"; };
+		ADE7B34B1AFDA91D231394F7 /* Pods-MarkMate-MarkMateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarkMate-MarkMateUITests.release.xcconfig"; path = "Target Support Files/Pods-MarkMate-MarkMateUITests/Pods-MarkMate-MarkMateUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BB826D7A9C384ADEE4112515 /* Pods-MarkMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarkMate.release.xcconfig"; path = "Target Support Files/Pods-MarkMate/Pods-MarkMate.release.xcconfig"; sourceTree = "<group>"; };
+		C35C40B772BD5E5D66C89B2B /* Pods-MarkMate-MarkMateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarkMate-MarkMateUITests.debug.xcconfig"; path = "Target Support Files/Pods-MarkMate-MarkMateUITests/Pods-MarkMate-MarkMateUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E7C03508063696221F99D7CD /* Pods_MarkMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarkMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7D0A15B45A532F3473DB458 /* Pods_MarkMate_MarkMateUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarkMate_MarkMateUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA02F7BF2AF8169C003DF5E7 /* MarkMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarkMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA02F7C22AF8169C003DF5E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA02F7C42AF8169C003DF5E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +68,8 @@
 		FA02F7E22AF8169E003DF5E7 /* MarkMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITests.swift; sourceTree = "<group>"; };
 		FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA383E232B13C231007C8943 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
+		FA383E242B13C231007C8943 /* ViewController1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController1.xib; sourceTree = "<group>"; };
 		FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		FA6276102B04091D009CA02A /* CONSTANTS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONSTANTS.swift; sourceTree = "<group>"; };
 		FA6276132B048750009CA02A /* MarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57956A1DA429389A524DAA81 /* Pods_MarkMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECCF5EEF440E4015F673802B /* Pods_MarkMateTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,12 +96,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C04AB8FFC0CEBA820C7E73E /* Pods_MarkMate_MarkMateUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C4BF82185CFBED8F374EFBC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D76FD1AB5EF64A81595D59A /* Pods-MarkMate.debug.xcconfig */,
+				BB826D7A9C384ADEE4112515 /* Pods-MarkMate.release.xcconfig */,
+				C35C40B772BD5E5D66C89B2B /* Pods-MarkMate-MarkMateUITests.debug.xcconfig */,
+				ADE7B34B1AFDA91D231394F7 /* Pods-MarkMate-MarkMateUITests.release.xcconfig */,
+				2F556B824B9F066909756D0A /* Pods-MarkMateTests.debug.xcconfig */,
+				90BDF749EBE00A53F09C715D /* Pods-MarkMateTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F6E6E682CD28E73D18B5E1B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7C03508063696221F99D7CD /* Pods_MarkMate.framework */,
+				E7D0A15B45A532F3473DB458 /* Pods_MarkMate_MarkMateUITests.framework */,
+				3E1EAB43AF8C3FCAE4CD76EF /* Pods_MarkMateTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA02F7B62AF8169B003DF5E7 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +133,8 @@
 				FA02F7DB2AF8169E003DF5E7 /* MarkMateTests */,
 				FA02F7E52AF8169E003DF5E7 /* MarkMateUITests */,
 				FA02F7C02AF8169C003DF5E7 /* Products */,
+				5C4BF82185CFBED8F374EFBC /* Pods */,
+				F6E6E682CD28E73D18B5E1B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +202,8 @@
 		FA62760B2B03F569009CA02A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA383E242B13C231007C8943 /* ViewController1.xib */,
+				FA383E232B13C231007C8943 /* ViewController1.swift */,
 				FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */,
 			);
 			path = Controllers;
@@ -178,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA02F7EC2AF8169E003DF5E7 /* Build configuration list for PBXNativeTarget "MarkMate" */;
 			buildPhases = (
+				66292B843C999ED82E720595 /* [CP] Check Pods Manifest.lock */,
 				FA02F7BB2AF8169C003DF5E7 /* Sources */,
 				FA02F7BC2AF8169C003DF5E7 /* Frameworks */,
 				FA02F7BD2AF8169C003DF5E7 /* Resources */,
+				D1A807C6E9AEEAAFE1320224 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +243,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA02F7EF2AF8169E003DF5E7 /* Build configuration list for PBXNativeTarget "MarkMateTests" */;
 			buildPhases = (
+				7F7C006F4209646D857D8502 /* [CP] Check Pods Manifest.lock */,
 				FA02F7D42AF8169E003DF5E7 /* Sources */,
 				FA02F7D52AF8169E003DF5E7 /* Frameworks */,
 				FA02F7D62AF8169E003DF5E7 /* Resources */,
@@ -213,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA02F7F22AF8169E003DF5E7 /* Build configuration list for PBXNativeTarget "MarkMateUITests" */;
 			buildPhases = (
+				2C08BFE666A2AC3CBB1A6F2D /* [CP] Check Pods Manifest.lock */,
 				FA02F7DE2AF8169E003DF5E7 /* Sources */,
 				FA02F7DF2AF8169E003DF5E7 /* Frameworks */,
 				FA02F7E02AF8169E003DF5E7 /* Resources */,
+				6FA3F035FAB0C653E39360C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA383E262B13C231007C8943 /* ViewController1.xib in Resources */,
 				FA02F7D22AF8169E003DF5E7 /* LaunchScreen.storyboard in Resources */,
 				FA02F7CF2AF8169E003DF5E7 /* Assets.xcassets in Resources */,
 				FA02F7CA2AF8169C003DF5E7 /* Main.storyboard in Resources */,
@@ -297,11 +349,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C08BFE666A2AC3CBB1A6F2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarkMate-MarkMateUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66292B843C999ED82E720595 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarkMate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FA3F035FAB0C653E39360C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarkMate-MarkMateUITests/Pods-MarkMate-MarkMateUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarkMate-MarkMateUITests/Pods-MarkMate-MarkMateUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarkMate-MarkMateUITests/Pods-MarkMate-MarkMateUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F7C006F4209646D857D8502 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarkMateTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1A807C6E9AEEAAFE1320224 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarkMate/Pods-MarkMate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarkMate/Pods-MarkMate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarkMate/Pods-MarkMate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA02F7BB2AF8169C003DF5E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA383E252B13C231007C8943 /* ViewController1.swift in Sources */,
 				FA6276142B048750009CA02A /* MarkViewController.swift in Sources */,
 				FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */,
 				FA6276112B04091D009CA02A /* CONSTANTS.swift in Sources */,
@@ -480,6 +636,7 @@
 		};
 		FA02F7ED2AF8169E003DF5E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D76FD1AB5EF64A81595D59A /* Pods-MarkMate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -507,6 +664,7 @@
 		};
 		FA02F7EE2AF8169E003DF5E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB826D7A9C384ADEE4112515 /* Pods-MarkMate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -534,6 +692,7 @@
 		};
 		FA02F7F02AF8169E003DF5E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F556B824B9F066909756D0A /* Pods-MarkMateTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -553,6 +712,7 @@
 		};
 		FA02F7F12AF8169E003DF5E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90BDF749EBE00A53F09C715D /* Pods-MarkMateTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -572,6 +732,7 @@
 		};
 		FA02F7F32AF8169E003DF5E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C35C40B772BD5E5D66C89B2B /* Pods-MarkMate-MarkMateUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -589,6 +750,7 @@
 		};
 		FA02F7F42AF8169E003DF5E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADE7B34B1AFDA91D231394F7 /* Pods-MarkMate-MarkMateUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
