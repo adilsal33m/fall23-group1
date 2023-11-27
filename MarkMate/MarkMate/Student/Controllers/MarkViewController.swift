@@ -85,6 +85,7 @@ class MarkViewController: UIViewController , MCSessionDelegate, MCBrowserViewCon
         if let text = String(data: data, encoding: .utf8) {
             DispatchQueue.main.async {
                 self.myLabel.text = text
+                print(text)
             }
         }
         session.disconnect()
