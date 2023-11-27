@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Student {
+struct Student
+{
     let name: String
     let erp: String
 }
