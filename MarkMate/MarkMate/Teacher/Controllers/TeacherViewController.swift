@@ -14,6 +14,8 @@ protocol AddStudentsViewControllerDelegate: AnyObject {
 
 class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, AddStudentsViewControllerDelegate {
     
+    var studentsData: [Student] = []
+    
     @IBOutlet weak var ImportExcelButton: UIButton!
     
     override func viewDidLoad() {
@@ -22,7 +24,8 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
     }
     
     @objc func importExcelButtonTapped() {
-        let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.content"], in: .import)
+        let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.comma-separated-values-text"], in: .import)
+        documentPicker.delegate = self
         documentPicker.delegate = self
         documentPicker.allowsMultipleSelection = false
         documentPicker.modalPresentationStyle = .formSheet
@@ -36,6 +39,45 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
             return
         }
         print("Selected file URL: \(selectedFileURL.path)")
+        
+        do {
+                    let csvString = try String(contentsOf: selectedFileURL, encoding: .utf8)
+                    let csvRows = csvString.components(separatedBy: .newlines)
+
+                    guard let headers = csvRows.first?.components(separatedBy: ","), headers.count >= 2 else {
+                        print("Invalid CSV format")
+                        return
+                    }
+
+                    var nameColumnIndex: Int?
+                    var erpColumnIndex: Int?
+
+                    for (index, header) in headers.enumerated() {
+                        if header.localizedCaseInsensitiveContains("Name") {
+                            nameColumnIndex = index
+                        } else if header.localizedCaseInsensitiveContains("ERP") {
+                            erpColumnIndex = index
+                        }
+                    }
+
+                    guard let nameIndex = nameColumnIndex, let erpIndex = erpColumnIndex else {
+                        print("Could not find 'Name' or 'ERP' columns")
+                        return
+                    }
+
+                    for csvRow in csvRows.dropFirst() {
+                        let rowComponents = csvRow.components(separatedBy: ",")
+
+                        if rowComponents.count > max(nameIndex, erpIndex) {
+                            let student = Student(name: rowComponents[nameIndex], erp: rowComponents[erpIndex])
+                            studentsData.append(student)
+                        }
+                    }
+
+                    tableView.reloadData()
+            } catch {
+                print("Error reading CSV file: \(error)")
+            }
     }
     
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
@@ -46,8 +88,6 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
     @IBAction func AddManuallyButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "segueToAddStudent", sender: self)
     }
-    
-    var studentsData: [Student] = []
         
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToAddStudent" {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Student
+struct Student: Codable
 {
     let name: String
     let erp: String

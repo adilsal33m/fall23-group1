@@ -7,7 +7,11 @@ target 'MarkMate' do
 
   # Pods for MarkMate
   pod 'CVCalendar', '~> 1.7.0'
+  
+  pod 'SwiftCSV'
 
+  pod 'CSV.swift'
+  
   target 'MarkMateTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,16 +1,24 @@
 PODS:
+  - CSV.swift (2.4.3)
   - CVCalendar (1.7.0)
+  - SwiftCSV (0.9.1)
 
 DEPENDENCIES:
+  - CSV.swift
   - CVCalendar (~> 1.7.0)
+  - SwiftCSV
 
 SPEC REPOS:
   trunk:
+    - CSV.swift
     - CVCalendar
+    - SwiftCSV
 
 SPEC CHECKSUMS:
+  CSV.swift: d38741b349c067b4a6db42237cb0e2974d21ccac
   CVCalendar: 1174c1b43c1a258970e14c1e8b19ef4106c5900b
+  SwiftCSV: 434082457a1598fd3d0028e9de6d0a3302933966
 
-PODFILE CHECKSUM: da25e19286b0d59b9fc52725c50e0ead740323a0
+PODFILE CHECKSUM: c86a2ce02ea64e0f46d4fe66f7ae706d594baaf7
 
 COCOAPODS: 1.14.3
