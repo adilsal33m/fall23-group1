@@ -12,6 +12,12 @@ protocol AddStudentsViewControllerDelegate: AnyObject {
     func didEnterData(name: String, erp: String)
 }
 
+protocol FinishAddingCourseDelegate: AnyObject {
+    func didFinishAddingCourse(course: Course, numberOfStudents: Int)
+}
+
+// MARK: - Adding Students View Controller
+
 class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, AddStudentsViewControllerDelegate {
     
     var studentsData: [Student] = []
@@ -84,6 +90,7 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
         print("Document picker was cancelled.")
     }
     
+    // MARK: - End of UIDocumentPickerDelegate Code
     
     @IBAction func AddManuallyButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "segueToAddStudent", sender: self)
@@ -104,6 +111,19 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
         let newStudent = Student(name: name, erp: erp)
         studentsData.append(newStudent)
         tableView.reloadData()
+    }
+    
+    weak var delegate: FinishAddingCourseDelegate?
+    var courseFromAddCourses: Course?
+    
+    @IBAction func finishButtonTapped(_ sender: UIButton) {
+        let numberOfStudents = studentsData.count
+
+        if let course = courseFromAddCourses {
+            delegate?.didFinishAddingCourse(course: course, numberOfStudents: numberOfStudents)
+        }
+        
+        performSegue(withIdentifier: "segueToCourses", sender: self)
     }
 }
 
@@ -132,12 +152,13 @@ extension AddingStudentsViewController: UITableViewDelegate, UITableViewDataSour
     }
 }
 
+// MARK: - Add Student View Controller
+
 class AddStudentViewController: UIViewController, AddStudentsViewControllerDelegate {
     
     func didEnterData(name: String, erp: String) {
     }
     
-
     @IBOutlet weak var StudentName: UITextField!
     @IBOutlet weak var StudentERP: UITextField!
 
@@ -147,6 +168,8 @@ class AddStudentViewController: UIViewController, AddStudentsViewControllerDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        StudentName.backgroundColor = .white
+        StudentERP.backgroundColor = .white
     }
 
     @IBAction func SaveButtonTapped(_ sender: UIButton) {
@@ -179,5 +202,149 @@ class AddStudentViewController: UIViewController, AddStudentsViewControllerDeleg
         for student in studentsData {
             print("Name: \(student.name), ERP: \(student.erp)")
         }
+    }
+}
+
+// MARK: - Courses View Controller
+
+class ClassTableViewCell: UITableViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.black.cgColor
+        contentView.layer.cornerRadius = 8
+    }
+}
+
+class CoursesViewController:UIViewController, AddCoursesDelegate{
+    func didAddCourse(course: Course) {
+        courses.append(course)
+        coursesTableView.reloadData()
+    }
+    
+    
+    @IBOutlet weak var coursesTableView: UITableView!
+    
+    var courses: [Course] = []
+    
+    @IBOutlet weak var teacherInitialsButton: UIButton!
+    @IBOutlet weak var lineLabel: UILabel!
+    @IBOutlet weak var plusButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Making both the buttons round
+        teacherInitialsButton.layer.cornerRadius = teacherInitialsButton.bounds.width / 2
+        teacherInitialsButton.layer.cornerRadius = teacherInitialsButton.bounds.height / 2
+        teacherInitialsButton.clipsToBounds = true
+        
+        plusButton.layer.cornerRadius = plusButton.bounds.width / 2
+        plusButton.layer.cornerRadius = plusButton.bounds.height / 2
+        plusButton.clipsToBounds = true
+        
+        addLineToLabel(label: lineLabel)
+        
+        coursesTableView.delegate = self
+        coursesTableView.dataSource = self
+    }
+    
+    func addLineToLabel(label: UILabel) {
+        // Creating a CALayer for the line
+        let lineLayer = CALayer()
+        lineLayer.frame = CGRect(x: 0, y: label.bounds.height - 1, width: label.bounds.width, height: 1)
+        lineLayer.backgroundColor = UIColor.black.cgColor
+        
+        // Adding the layer to the label's layer
+        label.layer.addSublayer(lineLayer)
+    }
+    
+    @IBAction func AddCoursesButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "AddCourseSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddCourseSegue" {
+            if let addCourseVC = segue.destination as? AddCourseViewController {
+                addCourseVC.delegate = self
+            }
+        }
+        if let addingStudentsVC = segue.destination as? AddingStudentsViewController {
+            addingStudentsVC.delegate = self
+        }
+    }
+    
+}
+
+extension CoursesViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return courses.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! ClassTableViewCell
+        let course = courses[indexPath.row]
+        cell.textLabel?.text = course.name
+        cell.detailTextLabel?.text = "Number: \(course.number), Semester: \(course.semester))"
+        return cell
+    }
+}
+
+extension CoursesViewController: FinishAddingCourseDelegate{
+    func didFinishAddingCourse(course: Course, numberOfStudents: Int) {
+        courses.append(course)
+        coursesTableView.reloadData()
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - Add Course View Controller
+
+protocol AddCoursesDelegate: AnyObject {
+    func didAddCourse(course: Course)
+}
+class AddCourseViewController: UIViewController{
+    
+    @IBOutlet weak var courseNameTextField: UITextField!
+    @IBOutlet weak var courseNumberTextField: UITextField!
+    @IBOutlet weak var semesterTextField: UITextField!
+    @IBOutlet weak var attendanceTextField: UITextField!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    weak var delegate: AddCoursesDelegate?
+    var selectedCourse: Course?
+    
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        guard let name = courseNameTextField.text,
+              let number = courseNumberTextField.text,
+              let semester = semesterTextField.text,
+              let attendance = attendanceTextField.text,
+              let attendance = Int(attendance) else {
+            return
+        }
+        
+        let course = Course(name: name, number: number, semester: semester, attendance: attendance)
+        selectedCourse = course
+        delegate?.didAddCourse(course: course)
+        performSegue(withIdentifier: "AddingStudentsSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let addingStudentsVC = segue.destination as? AddingStudentsViewController {
+            addingStudentsVC.courseFromAddCourses = selectedCourse
+        }
+    }
+}
+
+extension AddCourseViewController: FinishAddingCourseDelegate {
+    func didFinishAddingCourse(course: Course, numberOfStudents: Int) {
+        dismiss(animated: true, completion: nil)
     }
 }

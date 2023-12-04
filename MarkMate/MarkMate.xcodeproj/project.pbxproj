@@ -26,6 +26,7 @@
 		FA735EFB2B151DBE003BE2FA /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735EF82B151DBD003BE2FA /* ViewController1.swift */; };
 		FA735EFD2B151E23003BE2FA /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735EFC2B151E23003BE2FA /* MarkViewController.swift */; };
 		FA8830692B081EA500C11D32 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8830682B081EA500C11D32 /* Student.swift */; };
+		FAD178112B1CF8DE00A885C8 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD178102B1CF8DE00A885C8 /* Course.swift */; };
 		FFB2C58A9720E789EBAB3219 /* Pods_MarkMate_MarkMateUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48ACA67DF2786D7A0FAE61A2 /* Pods_MarkMate_MarkMateUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		FA735EF82B151DBD003BE2FA /* ViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		FA735EFC2B151E23003BE2FA /* MarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
 		FA8830682B081EA500C11D32 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		FAD178102B1CF8DE00A885C8 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		FEAF695557231C1F3FF7A6F9 /* Pods-MarkMateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarkMateTests.release.xcconfig"; path = "Target Support Files/Pods-MarkMateTests/Pods-MarkMateTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +129,6 @@
 				12A5E5FE5EB5AA7E86B9CEAA /* Pods-MarkMateTests.debug.xcconfig */,
 				FEAF695557231C1F3FF7A6F9 /* Pods-MarkMateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -200,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				FA65863B2B06AF040085226E /* Controllers */,
+				FAD178102B1CF8DE00A885C8 /* Course.swift */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -465,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA735EFB2B151DBE003BE2FA /* ViewController1.swift in Sources */,
+				FAD178112B1CF8DE00A885C8 /* Course.swift in Sources */,
 				FA6586402B06D8BC0085226E /* StudentViewController.swift in Sources */,
 				FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */,
 				FA02F7C32AF8169C003DF5E7 /* AppDelegate.swift in Sources */,
