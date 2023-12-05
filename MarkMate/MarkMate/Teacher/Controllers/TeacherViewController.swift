@@ -13,12 +13,16 @@ protocol AddStudentsViewControllerDelegate: AnyObject {
 }
 
 protocol FinishAddingCourseDelegate: AnyObject {
-    func didFinishAddingCourse(course: Course, numberOfStudents: Int)
+    func didFinishAddingCourse(course: Course,count: Int)
+}
+
+protocol AddCoursesDelegate: AnyObject {
+    func didAddCourse(course: Course)
 }
 
 // MARK: - Adding Students View Controller
 
-class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, AddStudentsViewControllerDelegate {
+class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, AddStudentsViewControllerDelegate, AddCoursesDelegate {
     
     var studentsData: [Student] = []
     
@@ -95,15 +99,6 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
     @IBAction func AddManuallyButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "segueToAddStudent", sender: self)
     }
-        
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToAddStudent" {
-            if let addStudentVC = segue.destination as? AddStudentViewController {
-                addStudentVC.studentsData = studentsData
-                addStudentVC.delegate = self
-            }
-        }
-    }
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -114,18 +109,44 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
     }
     
     weak var delegate: FinishAddingCourseDelegate?
-    var courseFromAddCourses: Course?
+    
+    var courses: [Course] = []
+    
+    var selectedCourse: Course?
+    
+    func didAddCourse(course: Course) {
+        selectedCourse = course
+        print("\(course)")
+        courses.append(course)
+    }
     
     @IBAction func finishButtonTapped(_ sender: UIButton) {
         let numberOfStudents = studentsData.count
-
-        if let course = courseFromAddCourses {
-            delegate?.didFinishAddingCourse(course: course, numberOfStudents: numberOfStudents)
-        }
-        
+        if let selectedCourse = selectedCourse {
+            delegate?.didFinishAddingCourse(course: selectedCourse, count: numberOfStudents)
+           } else {
+               print("Error: selectedCourse is nil")
+           }
         performSegue(withIdentifier: "segueToCourses", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToAddStudent" {
+            if let addStudentVC = segue.destination as? AddStudentViewController {
+                addStudentVC.studentsData = studentsData
+                addStudentVC.delegate = self
+            }
+        }
+        if segue.identifier == "segueToCourses" {
+            if let coursesVC = segue.destination as? CoursesViewController {
+                coursesVC.courses = courses
+                coursesVC.numberOfStudents = studentsData.count
+            }
+        }
+    }
 }
+
+// MARK: - Setting Up the Table Cells in AddingStudentsViewController
 
 class StudentTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
@@ -135,15 +156,24 @@ class StudentTableViewCell: UITableViewCell {
         nameLabel.text = "\(student.name)"
         erpLabel.text = "\(student.erp)"
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    
+        contentView.layer.borderWidth = 1
+        contentView.layer.borderColor = UIColor.black.cgColor
+        contentView.layer.cornerRadius = 8
+    }
 }
 
-    // Adopting UITableViewDelegate and UITableViewDataSource
+// MARK: - Setting Up the Table in AddingStudentsViewController
+
 extension AddingStudentsViewController: UITableViewDelegate, UITableViewDataSource {
  
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return studentsData.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)  as! StudentTableViewCell
         let student = studentsData[indexPath.row]
@@ -205,10 +235,25 @@ class AddStudentViewController: UIViewController, AddStudentsViewControllerDeleg
     }
 }
 
-// MARK: - Courses View Controller
+// MARK: - Setting Uo the Table Cells in CoursesViewController
+class CourseTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var courseNameLabel: UILabel!
+    @IBOutlet weak var courseDetailsLabel: UILabel!
+    @IBOutlet weak var studentsLabel: UILabel!
 
-class ClassTableViewCell: UITableViewCell {
-
+    func configure(with course: Course, numberOfStudents: Int) {
+        if let nameLabel = courseNameLabel {
+            nameLabel.text = course.name
+        }
+        if let detailsLabel = courseDetailsLabel {
+            detailsLabel.text = "\(course.semester) - \(course.number)"
+        }
+        if let countLabel = studentsLabel{
+            countLabel.text = "\(numberOfStudents)"
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     
@@ -218,16 +263,27 @@ class ClassTableViewCell: UITableViewCell {
     }
 }
 
-class CoursesViewController:UIViewController, AddCoursesDelegate{
+// MARK: - Courses View Controller
+
+class CoursesViewController:UIViewController, FinishAddingCourseDelegate, AddCoursesDelegate
+{
     func didAddCourse(course: Course) {
-        courses.append(course)
-        coursesTableView.reloadData()
     }
-    
     
     @IBOutlet weak var coursesTableView: UITableView!
     
     var courses: [Course] = []
+    var numberOfStudents: Int = 0
+    
+    func didFinishAddingCourse(course: Course,count: Int) {
+        courses.append(course)
+        numberOfStudents = count
+        print("Courses count after adding: \(courses.count)")
+        DispatchQueue.main.async {
+            self.coursesTableView.reloadData()
+            print("Reloaded table view")
+        }
+    }
     
     @IBOutlet weak var teacherInitialsButton: UIButton!
     @IBOutlet weak var lineLabel: UILabel!
@@ -249,6 +305,8 @@ class CoursesViewController:UIViewController, AddCoursesDelegate{
         
         coursesTableView.delegate = self
         coursesTableView.dataSource = self
+        
+        coursesTableView.register(CourseTableViewCell.self, forCellReuseIdentifier: "courseCell")
     }
     
     func addLineToLabel(label: UILabel) {
@@ -271,11 +329,7 @@ class CoursesViewController:UIViewController, AddCoursesDelegate{
                 addCourseVC.delegate = self
             }
         }
-        if let addingStudentsVC = segue.destination as? AddingStudentsViewController {
-            addingStudentsVC.delegate = self
-        }
     }
-    
 }
 
 extension CoursesViewController: UITableViewDelegate, UITableViewDataSource{
@@ -285,38 +339,25 @@ extension CoursesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! ClassTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! CourseTableViewCell
         let course = courses[indexPath.row]
-        cell.textLabel?.text = course.name
-        cell.detailTextLabel?.text = "Number: \(course.number), Semester: \(course.semester))"
+        cell.configure(with: course, numberOfStudents: numberOfStudents)
         return cell
-    }
-}
-
-extension CoursesViewController: FinishAddingCourseDelegate{
-    func didFinishAddingCourse(course: Course, numberOfStudents: Int) {
-        courses.append(course)
-        coursesTableView.reloadData()
-        dismiss(animated: true, completion: nil)
     }
 }
 
 // MARK: - Add Course View Controller
 
-protocol AddCoursesDelegate: AnyObject {
-    func didAddCourse(course: Course)
-}
-class AddCourseViewController: UIViewController{
+class AddCourseViewController: UIViewController, FinishAddingCourseDelegate{
+    func didFinishAddingCourse(course: Course, count: Int) {
+    }
+    
+    var courses: [Course] = []
     
     @IBOutlet weak var courseNameTextField: UITextField!
     @IBOutlet weak var courseNumberTextField: UITextField!
     @IBOutlet weak var semesterTextField: UITextField!
     @IBOutlet weak var attendanceTextField: UITextField!
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     weak var delegate: AddCoursesDelegate?
     var selectedCourse: Course?
@@ -325,26 +366,27 @@ class AddCourseViewController: UIViewController{
         guard let name = courseNameTextField.text,
               let number = courseNumberTextField.text,
               let semester = semesterTextField.text,
-              let attendance = attendanceTextField.text,
-              let attendance = Int(attendance) else {
+              let attendanceString = attendanceTextField.text,
+              let attendance = Int(attendanceString) else {
             return
         }
-        
+
         let course = Course(name: name, number: number, semester: semester, attendance: attendance)
-        selectedCourse = course
         delegate?.didAddCourse(course: course)
+        selectedCourse = course
+        courses.append(course)
+        print("\(course)")
         performSegue(withIdentifier: "AddingStudentsSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let addingStudentsVC = segue.destination as? AddingStudentsViewController {
-            addingStudentsVC.courseFromAddCourses = selectedCourse
+        if segue.identifier == "AddingStudentsSegue" {
+            if let addingStudentsVC = segue.destination as? AddingStudentsViewController {
+                addingStudentsVC.courses = courses
+                addingStudentsVC.selectedCourse = selectedCourse
+                print("Selected Course in prepare: \(String(describing: selectedCourse))")
+                addingStudentsVC.delegate = self
+            }
         }
-    }
-}
-
-extension AddCourseViewController: FinishAddingCourseDelegate {
-    func didFinishAddingCourse(course: Course, numberOfStudents: Int) {
-        dismiss(animated: true, completion: nil)
     }
 }
