@@ -23,7 +23,8 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
 
     @IBOutlet weak var Field: UITextField!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         myPeerID = MCPeerID(displayName: UIDevice.current.name)
@@ -31,24 +32,34 @@ class ViewController: UIViewController, MCSessionDelegate, MCBrowserViewControll
         session = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
         session.delegate = self
         
-        let repo = CourseRepository()
-//        let ans = repo.removeStudent(class_nbr: 5048, student: Student(name: "Maaz", erp: 22792))
-//        print(ans)
-        let result = repo.getAll()
-//        for item in result!
-//        {
-//            print("class_nbr : \(item.class_nbr)")
-//            print("class_name : " + item.course_name)
-//            print("semester : " + item.semester)
-//            print("roster : \(item.roster)")
-//        }
-//        let repo1 = StudentRepository()
-//        let result1 = repo1.getAll()
-//        for item in result1!
-//        {
-//            print("erp : \(item.erp)")
-//            print("name : " + item.name)
-//        }
+        
+        let courseManager = CourseManager()
+//        let course1 = Course(course_nbr: 1112, semester: "Fall", course_name: "Automata", attendance_req: 60)
+//        let list = [Student(name: "Maaz", erp: 22792),Student(name: "Batla", erp: 22794), Student(name: "Rafae", erp: 22828)]
+//        courseManager.createCourse(course: course1, students: list)
+//        print(courseManager.getRoster(course_nbr: 1112))
+//        let session1 = Session(id: UUID(), date: Date())
+//        let session2 = Session(id: UUID(), date: Date())
+//        let session3 = Session(id: UUID(), date: Date())
+//        courseManager.addSession(course_nbr: 1112, session: session1, absentees: [22792,22794,22828])
+//        courseManager.addSession(course_nbr: 1112, session: session2, absentees: [22792])
+//        courseManager.addSession(course_nbr: 1112, session: session3, absentees: [22794])
+//        print(courseManager.getSessions(course_nbr: 1112))
+//        courseManager.removeStudentFromCourse(course_nbr: 1112, erp: 22792)
+//        print(courseManager.getRoster(course_nbr: 1112))
+//        print(courseManager.getAllCourses())
+//        courseManager.deleteCourse(course_nbr: 1112)
+//        print(courseManager.getRoster(course_nbr: 1112))
+//        print(courseManager.getAllCourses())
+//        print(courseManager.getSessions(course_nbr: 1112))
+//        courseManager.updateCourse(course: course1)
+//        courseManager.deleteCourse(course_nbr: 1112)
+//        let response = courseManager.getAllCourses()
+//        print(response)
+//        courseManager.removeStudentFromCourse(course_nbr: 1112, erp: 22794)
+//        courseManager.addStudentToCourse(course_nbr: 1112, student: Student(name: "Rafae", erp: 22828))
+//        print(courseManager.getRoster(course_nbr: 1112))
+        
         
     }
     

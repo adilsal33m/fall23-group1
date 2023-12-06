@@ -17,8 +17,7 @@ extension Attendance {
     }
 
     @NSManaged public var date: Date?
-    @NSManaged public var id: UUID?
-    @NSManaged public var isPresent: Bool
+    @NSManaged public var id: UUID
     @NSManaged public var attendanceToCourses: Courses?
     @NSManaged public var attendanceToStudents: Students?
 

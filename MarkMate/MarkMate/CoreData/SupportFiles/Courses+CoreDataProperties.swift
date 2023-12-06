@@ -2,7 +2,7 @@
 //  Courses+CoreDataProperties.swift
 //  MarkMate
 //
-//  Created by Macbook on 13/11/2023.
+//  Created by Macbook on 05/12/2023.
 //
 //
 
@@ -10,24 +10,40 @@ import Foundation
 import CoreData
 
 
-extension Courses
-{
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Courses>
-    {
+extension Courses {
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<Courses> {
         return NSFetchRequest<Courses>(entityName: "Courses")
     }
 
-    @NSManaged public var semester: String?
     @NSManaged public var class_nbr: Int32
     @NSManaged public var course_name: String?
+    @NSManaged public var semester: String?
+    @NSManaged public var attendance_requirement: Int32
+    @NSManaged public var coursesToAttendance:Set<Attendance>?
     @NSManaged public var coursesToStudents: Set<Students>?
-    @NSManaged public var coursesToAttendance: NSSet?
-    
+
+}
+
+// MARK: Generated accessors for coursesToAttendance
+extension Courses {
+
+    @objc(addCoursesToAttendanceObject:)
+    @NSManaged public func addToCoursesToAttendance(_ value: Attendance)
+
+    @objc(removeCoursesToAttendanceObject:)
+    @NSManaged public func removeFromCoursesToAttendance(_ value: Attendance)
+
+    @objc(addCoursesToAttendance:)
+    @NSManaged public func addToCoursesToAttendance(_ values: Set<Attendance>)
+
+    @objc(removeCoursesToAttendance:)
+    @NSManaged public func removeFromCoursesToAttendance(_ values: Set<Attendance>)
+
 }
 
 // MARK: Generated accessors for coursesToStudents
-extension Courses
-{
+extension Courses {
 
     @objc(addCoursesToStudentsObject:)
     @NSManaged public func addToCoursesToStudents(_ value: Students)
@@ -43,24 +59,6 @@ extension Courses
 
 }
 
-// MARK: Generated accessors for coursesToAttendance
-extension Courses {
-
-    @objc(addCoursesToAttendanceObject:)
-    @NSManaged public func addToCoursesToAttendance(_ value: Attendance)
-
-    @objc(removeCoursesToAttendanceObject:)
-    @NSManaged public func removeFromCoursesToAttendance(_ value: Attendance)
-
-    @objc(addCoursesToAttendance:)
-    @NSManaged public func addToCoursesToAttendance(_ values: NSSet)
-
-    @objc(removeCoursesToAttendance:)
-    @NSManaged public func removeFromCoursesToAttendance(_ values: NSSet)
-
-}
-
-extension Courses : Identifiable
-{
+extension Courses : Identifiable {
 
 }
