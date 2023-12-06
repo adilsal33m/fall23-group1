@@ -70,9 +70,17 @@ class ViewController1: UIViewController , MCSessionDelegate, MCBrowserViewContro
    override func viewDidLoad() {
        super.viewDidLoad()
 
-       // Do any additional setup after loading the view.
+       NotificationCenter.default.addObserver(self, selector: #selector(handleTimeOverNotification), name: .timeOverNotification, object: nil)
        
-       
+
+   }
+   
+   @objc func handleTimeOverNotification() {
+       AdvertiserAssisstant.stopAdvertisingPeer()
+       session.disconnect()
+       print("Stopped Hosting...")
+       statusLabel.text = "Inactive"
+       statusLabel.textColor = .red
    }
    
    override func viewDidLayoutSubviews() {
@@ -102,33 +110,20 @@ class ViewController1: UIViewController , MCSessionDelegate, MCBrowserViewContro
        statusLabel.textColor = .green
    }
    
-//    func joinSession() {
-//        let browser = MCBrowserViewController(serviceType: "demo", session: session)
-//        browser.delegate = self
-//        present(browser, animated: true)
-//    }
-   
-//    @IBAction func PressJoin(_ sender: Any) {
-//        joinSession()
-//    }
-   
    @IBAction func StartAttendance(_ sender: Any) {
        print("Hosting now...")
        startHosting()
+       NotificationCenter.default.post(name: .buttonPressedNotification, object: nil)
    }
    
    @IBAction func FinishAttendance(_ sender: Any) {
+       AdvertiserAssisstant.stopAdvertisingPeer()
        session.disconnect()
+       NotificationCenter.default.post(name: .attendanceOverNotification, object: nil)
        print("Stopped Hosting...")
        statusLabel.text = "Inactive"
        statusLabel.textColor = .red
    }
-   
-//    @IBAction func PressSend(_ sender: Any) {
-//        sendData(data: (Field?.text) ?? "Demo" )
-//    }
-   
-   
    
    
    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {

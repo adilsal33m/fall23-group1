@@ -25,6 +25,18 @@
 		FA62760D2B03F57F009CA02A /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */; };
 		FA6276112B04091D009CA02A /* CONSTANTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6276102B04091D009CA02A /* CONSTANTS.swift */; };
 		FA6276142B048750009CA02A /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6276132B048750009CA02A /* MarkViewController.swift */; };
+		FA735EFF2B172A8A003BE2FA /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735EFE2B172A8A003BE2FA /* SessionViewController.swift */; };
+		FA7A3CD82B20A78700BCD2FA /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CD72B20A78600BCD2FA /* TeacherViewController.swift */; };
+		FA7A3CDA2B20A87000BCD2FA /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CD92B20A87000BCD2FA /* Course.swift */; };
+		FA7A3CDC2B20A8B900BCD2FA /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CDB2B20A8B900BCD2FA /* Student.swift */; };
+		FA7A3CDE2B20E1FF00BCD2FA /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CDD2B20E1FE00BCD2FA /* NotificationNames.swift */; };
+		FA7A3CE02B20E6DB00BCD2FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CDF2B20E6DB00BCD2FA /* TimerView.swift */; };
+		FA7A3CE32B20E75600BCD2FA /* SegStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CE12B20E75500BCD2FA /* SegStudentViewController.swift */; };
+		FA7A3CE42B20E75600BCD2FA /* SegStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A3CE22B20E75500BCD2FA /* SegStudentViewController.xib */; };
+		FA7A3CE72B20F5C900BCD2FA /* segStudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CE52B20F5C900BCD2FA /* segStudentCell.swift */; };
+		FA7A3CE82B20F5C900BCD2FA /* segStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A3CE62B20F5C900BCD2FA /* segStudentCell.xib */; };
+		FA7A3CEB2B21248F00BCD2FA /* segHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CE92B21248F00BCD2FA /* segHistoryViewController.swift */; };
+		FA7A3CEC2B21248F00BCD2FA /* segHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A3CEA2B21248F00BCD2FA /* segHistoryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +85,18 @@
 		FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		FA6276102B04091D009CA02A /* CONSTANTS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONSTANTS.swift; sourceTree = "<group>"; };
 		FA6276132B048750009CA02A /* MarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
+		FA735EFE2B172A8A003BE2FA /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		FA7A3CD72B20A78600BCD2FA /* TeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
+		FA7A3CD92B20A87000BCD2FA /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		FA7A3CDB2B20A8B900BCD2FA /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		FA7A3CDD2B20E1FE00BCD2FA /* NotificationNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
+		FA7A3CDF2B20E6DB00BCD2FA /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		FA7A3CE12B20E75500BCD2FA /* SegStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegStudentViewController.swift; path = Controllers/SegStudentViewController.swift; sourceTree = "<group>"; };
+		FA7A3CE22B20E75500BCD2FA /* SegStudentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SegStudentViewController.xib; path = Controllers/SegStudentViewController.xib; sourceTree = "<group>"; };
+		FA7A3CE52B20F5C900BCD2FA /* segStudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segStudentCell.swift; sourceTree = "<group>"; };
+		FA7A3CE62B20F5C900BCD2FA /* segStudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = segStudentCell.xib; sourceTree = "<group>"; };
+		FA7A3CE92B21248F00BCD2FA /* segHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segHistoryViewController.swift; sourceTree = "<group>"; };
+		FA7A3CEA2B21248F00BCD2FA /* segHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = segHistoryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +175,7 @@
 		FA02F7C12AF8169C003DF5E7 /* MarkMate */ = {
 			isa = PBXGroup;
 			children = (
+				FA7A3CDD2B20E1FE00BCD2FA /* NotificationNames.swift */,
 				FA6276062B03F22A009CA02A /* Teacher */,
 				FA6276052B03F1F9009CA02A /* Student */,
 				FA02F7C22AF8169C003DF5E7 /* AppDelegate.swift */,
@@ -186,6 +211,7 @@
 		FA6276052B03F1F9009CA02A /* Student */ = {
 			isa = PBXGroup;
 			children = (
+				FA7A3CDB2B20A8B900BCD2FA /* Student.swift */,
 				FA6276122B04872F009CA02A /* Controllers */,
 			);
 			path = Student;
@@ -194,7 +220,15 @@
 		FA6276062B03F22A009CA02A /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				FA7A3CE12B20E75500BCD2FA /* SegStudentViewController.swift */,
+				FA7A3CE22B20E75500BCD2FA /* SegStudentViewController.xib */,
+				FA7A3CDF2B20E6DB00BCD2FA /* TimerView.swift */,
+				FA7A3CD92B20A87000BCD2FA /* Course.swift */,
 				FA62760B2B03F569009CA02A /* Controllers */,
+				FA7A3CE52B20F5C900BCD2FA /* segStudentCell.swift */,
+				FA7A3CE62B20F5C900BCD2FA /* segStudentCell.xib */,
+				FA7A3CE92B21248F00BCD2FA /* segHistoryViewController.swift */,
+				FA7A3CEA2B21248F00BCD2FA /* segHistoryViewController.xib */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -204,7 +238,9 @@
 			children = (
 				FA383E242B13C231007C8943 /* ViewController1.xib */,
 				FA383E232B13C231007C8943 /* ViewController1.swift */,
+				FA7A3CD72B20A78600BCD2FA /* TeacherViewController.swift */,
 				FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */,
+				FA735EFE2B172A8A003BE2FA /* SessionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -326,8 +362,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7A3CE42B20E75600BCD2FA /* SegStudentViewController.xib in Resources */,
 				FA383E262B13C231007C8943 /* ViewController1.xib in Resources */,
 				FA02F7D22AF8169E003DF5E7 /* LaunchScreen.storyboard in Resources */,
+				FA7A3CEC2B21248F00BCD2FA /* segHistoryViewController.xib in Resources */,
+				FA7A3CE82B20F5C900BCD2FA /* segStudentCell.xib in Resources */,
 				FA02F7CF2AF8169E003DF5E7 /* Assets.xcassets in Resources */,
 				FA02F7CA2AF8169C003DF5E7 /* Main.storyboard in Resources */,
 			);
@@ -457,12 +496,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7A3CE02B20E6DB00BCD2FA /* TimerView.swift in Sources */,
 				FA383E252B13C231007C8943 /* ViewController1.swift in Sources */,
+				FA7A3CDA2B20A87000BCD2FA /* Course.swift in Sources */,
+				FA7A3CEB2B21248F00BCD2FA /* segHistoryViewController.swift in Sources */,
 				FA6276142B048750009CA02A /* MarkViewController.swift in Sources */,
+				FA7A3CDE2B20E1FF00BCD2FA /* NotificationNames.swift in Sources */,
+				FA7A3CE72B20F5C900BCD2FA /* segStudentCell.swift in Sources */,
 				FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */,
+				FA7A3CE32B20E75600BCD2FA /* SegStudentViewController.swift in Sources */,
+				FA735EFF2B172A8A003BE2FA /* SessionViewController.swift in Sources */,
 				FA6276112B04091D009CA02A /* CONSTANTS.swift in Sources */,
 				FA62760D2B03F57F009CA02A /* AttendanceViewController.swift in Sources */,
+				FA7A3CDC2B20A8B900BCD2FA /* Student.swift in Sources */,
 				FA02F7C32AF8169C003DF5E7 /* AppDelegate.swift in Sources */,
+				FA7A3CD82B20A78700BCD2FA /* TeacherViewController.swift in Sources */,
 				FA02F7C52AF8169C003DF5E7 /* SceneDelegate.swift in Sources */,
 				FA02F7CD2AF8169C003DF5E7 /* MarkMate.xcdatamodeld in Sources */,
 			);
