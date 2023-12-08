@@ -12,17 +12,9 @@ protocol AddStudentsViewControllerDelegate: AnyObject {
     func didEnterData(name: String, erp: String)
 }
 
-protocol FinishAddingCourseDelegate: AnyObject {
-    func didFinishAddingCourse(course: Course,count: Int)
-}
-
-protocol AddCoursesDelegate: AnyObject {
-    func didAddCourse(course: Course)
-}
-
 // MARK: - Adding Students View Controller
 
-class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, AddStudentsViewControllerDelegate, AddCoursesDelegate {
+class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, AddStudentsViewControllerDelegate {
     
     var studentsData: [Student] = []
     
@@ -96,10 +88,6 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
     
     // MARK: - End of UIDocumentPickerDelegate Code
     
-    @IBAction func AddManuallyButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "segueToAddStudent", sender: self)
-    }
-    
     @IBOutlet weak var tableView: UITableView!
     
     func didEnterData(name: String, erp: String) {
@@ -108,26 +96,22 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
         tableView.reloadData()
     }
     
-    weak var delegate: FinishAddingCourseDelegate?
-    
     var courses: [Course] = []
     
     var selectedCourse: Course?
     
     func didAddCourse(course: Course) {
         selectedCourse = course
-        print("\(course)")
+        print("hello \(course)")
         courses.append(course)
     }
     
     @IBAction func finishButtonTapped(_ sender: UIButton) {
         let numberOfStudents = studentsData.count
-        if let selectedCourse = selectedCourse {
-            delegate?.didFinishAddingCourse(course: selectedCourse, count: numberOfStudents)
-           } else {
-               print("Error: selectedCourse is nil")
-           }
+        NotificationCenter.default.post(name: .studentCountSending, object: nil, userInfo: ["StudentCount": numberOfStudents])
         performSegue(withIdentifier: "segueToCourses", sender: self)
+        
+        //navigationController?.popViewController(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -139,7 +123,7 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
         }
         if segue.identifier == "segueToCourses" {
             if let coursesVC = segue.destination as? CoursesViewController {
-                coursesVC.courses = courses
+                //CoursesViewController.courses = courses
                 coursesVC.numberOfStudents = studentsData.count
             }
         }
@@ -242,15 +226,24 @@ class CourseTableViewCell: UITableViewCell {
     @IBOutlet weak var courseDetailsLabel: UILabel!
     @IBOutlet weak var studentsLabel: UILabel!
 
-    func configure(with course: Course, numberOfStudents: Int) {
+    func configure(with course: Course) {
         if let nameLabel = courseNameLabel {
             nameLabel.text = course.name
+            print("name set")
         }
         if let detailsLabel = courseDetailsLabel {
             detailsLabel.text = "\(course.semester) - \(course.number)"
+            print("detail set")
         }
-        if let countLabel = studentsLabel{
-            countLabel.text = "\(numberOfStudents)"
+        if let countLabel = studentsLabel {
+            if let studentCount = course.numberOfStudents {
+                countLabel.text = "\(studentCount)"
+            }
+            else {
+                countLabel.text = "0"
+            }
+            
+            print("count set")
         }
     }
     
@@ -265,28 +258,18 @@ class CourseTableViewCell: UITableViewCell {
 
 // MARK: - Courses View Controller
 
-class CoursesViewController:UIViewController, FinishAddingCourseDelegate, AddCoursesDelegate
+class CoursesViewController:UIViewController
 {
     func didAddCourse(course: Course) {
     }
     
     @IBOutlet weak var coursesTableView: UITableView!
     
-    var courses: [Course] = []
+    static var courses: [Course] = []
     var numberOfStudents: Int = 0
     
-    func didFinishAddingCourse(course: Course,count: Int) {
-        courses.append(course)
-        numberOfStudents = count
-        print("Courses count after adding: \(courses.count)")
-        DispatchQueue.main.async {
-            self.coursesTableView.reloadData()
-            print("Reloaded table view")
-        }
-    }
-    
     @IBOutlet weak var teacherInitialsButton: UIButton!
-    @IBOutlet weak var lineLabel: UILabel!
+    //@IBOutlet weak var lineLabel: UILabel!
     @IBOutlet weak var plusButton: UIButton!
     
     override func viewDidLoad() {
@@ -301,65 +284,76 @@ class CoursesViewController:UIViewController, FinishAddingCourseDelegate, AddCou
         plusButton.layer.cornerRadius = plusButton.bounds.height / 2
         plusButton.clipsToBounds = true
         
-        addLineToLabel(label: lineLabel)
+        //addLineToLabel(label: lineLabel)
         
         coursesTableView.delegate = self
         coursesTableView.dataSource = self
-        
-        coursesTableView.register(CourseTableViewCell.self, forCellReuseIdentifier: "courseCell")
+        coursesTableView.layer.backgroundColor = UIColor.red.cgColor
+
+        //coursesTableView.register(CourseTableViewCell.self, forCellReuseIdentifier: "courseCell")
     }
     
-    func addLineToLabel(label: UILabel) {
-        // Creating a CALayer for the line
-        let lineLayer = CALayer()
-        lineLayer.frame = CGRect(x: 0, y: label.bounds.height - 1, width: label.bounds.width, height: 1)
-        lineLayer.backgroundColor = UIColor.black.cgColor
-        
-        // Adding the layer to the label's layer
-        label.layer.addSublayer(lineLayer)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNewCourseNotification(_:)), name: .newCourseAdded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleStudentCountSent(_:)), name: .studentCountSending, object: nil)
     }
     
-    @IBAction func AddCoursesButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "AddCourseSegue", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddCourseSegue" {
-            if let addCourseVC = segue.destination as? AddCourseViewController {
-                addCourseVC.delegate = self
-            }
+    @objc func handleStudentCountSent(_ notification: Notification) {
+        numberOfStudents = (notification.userInfo?["StudentCount"] as? Int)!
+        if var lastCourse = CoursesViewController.courses.last {
+            lastCourse.numberOfStudents = numberOfStudents
+            CoursesViewController.courses[CoursesViewController.courses.count-1] = lastCourse
         }
     }
+    
+    @objc func handleNewCourseNotification(_ notification: Notification) {
+        print("here")
+        let selectedCourse = (notification.userInfo?["newCourse"] as? Course)!
+        CoursesViewController.courses.append(selectedCourse)
+        print(CoursesViewController.courses)
+    }
+    
+//    func addLineToLabel(label: UILabel) {
+//        // Creating a CALayer for the line
+//        let lineLayer = CALayer()
+//        lineLayer.frame = CGRect(x: 0, y: label.bounds.height - 1, width: label.bounds.width, height: 1)
+//        lineLayer.backgroundColor = UIColor.black.cgColor
+//
+//        // Adding the layer to the label's layer
+//        label.layer.addSublayer(lineLayer)
+//    }
 }
 
 extension CoursesViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return courses.count
+        return CoursesViewController.courses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! CourseTableViewCell
-        let course = courses[indexPath.row]
-        cell.configure(with: course, numberOfStudents: numberOfStudents)
+        let course = CoursesViewController.courses[indexPath.row]
+        print(course)
+        cell.configure(with: course)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
     }
 }
 
 // MARK: - Add Course View Controller
 
-class AddCourseViewController: UIViewController, FinishAddingCourseDelegate{
-    func didFinishAddingCourse(course: Course, count: Int) {
-    }
-    
+class AddCourseViewController: UIViewController {
     var courses: [Course] = []
     
     @IBOutlet weak var courseNameTextField: UITextField!
     @IBOutlet weak var courseNumberTextField: UITextField!
     @IBOutlet weak var semesterTextField: UITextField!
     @IBOutlet weak var attendanceTextField: UITextField!
-    
-    weak var delegate: AddCoursesDelegate?
+
     var selectedCourse: Course?
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -372,21 +366,7 @@ class AddCourseViewController: UIViewController, FinishAddingCourseDelegate{
         }
 
         let course = Course(name: name, number: number, semester: semester, attendance: attendance)
-        delegate?.didAddCourse(course: course)
-        selectedCourse = course
-        courses.append(course)
-        print("\(course)")
-        performSegue(withIdentifier: "AddingStudentsSegue", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddingStudentsSegue" {
-            if let addingStudentsVC = segue.destination as? AddingStudentsViewController {
-                addingStudentsVC.courses = courses
-                addingStudentsVC.selectedCourse = selectedCourse
-                print("Selected Course in prepare: \(String(describing: selectedCourse))")
-                addingStudentsVC.delegate = self
-            }
-        }
+        NotificationCenter.default.post(name: .newCourseAdded, object: nil, userInfo: ["newCourse": course])
+        //performSegue(withIdentifier: "segueToAddingStudents", sender: self)
     }
 }

@@ -9,19 +9,12 @@ import UIKit
 
 class Counter {
     static let shared = Counter()
-
     var timer: Timer?
     let initialCountdownTime: TimeInterval = 300  // 5 minutes in this example
     var remainingTime: TimeInterval = 300
     var updateClosure: ((String) -> Void)?
 
-    private init() {
-        // Private initializer to enforce singleton pattern
-    }
-
-    func setupTimer() {
-        // Set up any initial configurations for your timer
-    }
+    private init() {}
 
     func startTimer(updateClosure: @escaping (String) -> Void) {
         self.updateClosure = updateClosure
@@ -51,6 +44,15 @@ class Counter {
 }
 
 class SessionViewController: UIViewController {
+    static var totalCount = 0
+    static var markedCount = 0
+    
+    @IBAction func finishAttendance(_ sender: Any) {
+        NotificationCenter.default.post(name: .forceEndSessionNotification, object: nil)
+        timer!.remainingTime = timer!.initialCountdownTime
+        timer = nil
+        navigationController?.popViewController(animated: true)
+    }
     
     var timer: Counter?
 
@@ -63,6 +65,10 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var Timer: TimerView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        var unmarkedCount = SessionViewController.totalCount - SessionViewController.markedCount
+        TotalCountLabel.text = "\(SessionViewController.totalCount)"
+        MarkedLabel.text = "\(SessionViewController.markedCount)"
+        UnMarkedLabel.text = "\(unmarkedCount)"
         UnMarkedLabel.textColor = .red
         MarkedLabel.textColor = menuBar.backgroundColor
         TotalCountLabel.textColor = menuBar.backgroundColor
@@ -79,6 +85,7 @@ class SessionViewController: UIViewController {
         CountView.clipsToBounds = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleAttendanceOverNotification), name: .attendanceOverNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNewStudent), name: .newAttendanceReceived, object: nil)
         
         
         timer = Counter.shared
@@ -86,6 +93,12 @@ class SessionViewController: UIViewController {
         timer?.startTimer { [weak self] formattedTime in
             self?.timerLabel.text = formattedTime
         }
+    }
+    
+    @objc func handleNewStudent() {
+        SessionViewController.markedCount = Int(self.MarkedLabel.text!)!
+        SessionViewController.markedCount+=1
+        self.MarkedLabel.text = "\(SessionViewController.markedCount)"
     }
     
     @objc func handleAttendanceOverNotification() {

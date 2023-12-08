@@ -20,6 +20,14 @@
 		FA02F7DD2AF8169E003DF5E7 /* MarkMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7DC2AF8169E003DF5E7 /* MarkMateTests.swift */; };
 		FA02F7E72AF8169E003DF5E7 /* MarkMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */; };
 		FA02F7E92AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */; };
+		FA280DDF2B21BAE200C4BA7D /* segAttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280DDD2B21BAE200C4BA7D /* segAttendanceCell.swift */; };
+		FA280DE02B21BAE200C4BA7D /* segAttendanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA280DDE2B21BAE200C4BA7D /* segAttendanceCell.xib */; };
+		FA280DE22B21DA0A00C4BA7D /* StudentAttRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280DE12B21DA0A00C4BA7D /* StudentAttRecordViewController.swift */; };
+		FA280DE52B21E9C300C4BA7D /* StudentAttCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280DE32B21E9C300C4BA7D /* StudentAttCell.swift */; };
+		FA280DE62B21E9C300C4BA7D /* StudentAttCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA280DE42B21E9C300C4BA7D /* StudentAttCell.xib */; };
+		FA280DE82B2220E600C4BA7D /* CourseAttRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280DE72B2220E600C4BA7D /* CourseAttRecordViewController.swift */; };
+		FA280DEB2B22278F00C4BA7D /* CourseAttRecTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280DE92B22278F00C4BA7D /* CourseAttRecTableCell.swift */; };
+		FA280DEC2B22278F00C4BA7D /* CourseAttRecTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA280DEA2B22278F00C4BA7D /* CourseAttRecTableCell.xib */; };
 		FA383E252B13C231007C8943 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA383E232B13C231007C8943 /* ViewController1.swift */; };
 		FA383E262B13C231007C8943 /* ViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA383E242B13C231007C8943 /* ViewController1.xib */; };
 		FA62760D2B03F57F009CA02A /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */; };
@@ -80,6 +88,14 @@
 		FA02F7E22AF8169E003DF5E7 /* MarkMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITests.swift; sourceTree = "<group>"; };
 		FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA280DDD2B21BAE200C4BA7D /* segAttendanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segAttendanceCell.swift; sourceTree = "<group>"; };
+		FA280DDE2B21BAE200C4BA7D /* segAttendanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = segAttendanceCell.xib; sourceTree = "<group>"; };
+		FA280DE12B21DA0A00C4BA7D /* StudentAttRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAttRecordViewController.swift; sourceTree = "<group>"; };
+		FA280DE32B21E9C300C4BA7D /* StudentAttCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAttCell.swift; sourceTree = "<group>"; };
+		FA280DE42B21E9C300C4BA7D /* StudentAttCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentAttCell.xib; sourceTree = "<group>"; };
+		FA280DE72B2220E600C4BA7D /* CourseAttRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAttRecordViewController.swift; sourceTree = "<group>"; };
+		FA280DE92B22278F00C4BA7D /* CourseAttRecTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAttRecTableCell.swift; sourceTree = "<group>"; };
+		FA280DEA2B22278F00C4BA7D /* CourseAttRecTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseAttRecTableCell.xib; sourceTree = "<group>"; };
 		FA383E232B13C231007C8943 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		FA383E242B13C231007C8943 /* ViewController1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController1.xib; sourceTree = "<group>"; };
 		FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
@@ -91,8 +107,8 @@
 		FA7A3CDB2B20A8B900BCD2FA /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		FA7A3CDD2B20E1FE00BCD2FA /* NotificationNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		FA7A3CDF2B20E6DB00BCD2FA /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
-		FA7A3CE12B20E75500BCD2FA /* SegStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegStudentViewController.swift; path = Controllers/SegStudentViewController.swift; sourceTree = "<group>"; };
-		FA7A3CE22B20E75500BCD2FA /* SegStudentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SegStudentViewController.xib; path = Controllers/SegStudentViewController.xib; sourceTree = "<group>"; };
+		FA7A3CE12B20E75500BCD2FA /* SegStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegStudentViewController.swift; sourceTree = "<group>"; };
+		FA7A3CE22B20E75500BCD2FA /* SegStudentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegStudentViewController.xib; sourceTree = "<group>"; };
 		FA7A3CE52B20F5C900BCD2FA /* segStudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segStudentCell.swift; sourceTree = "<group>"; };
 		FA7A3CE62B20F5C900BCD2FA /* segStudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = segStudentCell.xib; sourceTree = "<group>"; };
 		FA7A3CE92B21248F00BCD2FA /* segHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segHistoryViewController.swift; sourceTree = "<group>"; };
@@ -220,15 +236,17 @@
 		FA6276062B03F22A009CA02A /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
-				FA7A3CE12B20E75500BCD2FA /* SegStudentViewController.swift */,
-				FA7A3CE22B20E75500BCD2FA /* SegStudentViewController.xib */,
 				FA7A3CDF2B20E6DB00BCD2FA /* TimerView.swift */,
 				FA7A3CD92B20A87000BCD2FA /* Course.swift */,
 				FA62760B2B03F569009CA02A /* Controllers */,
 				FA7A3CE52B20F5C900BCD2FA /* segStudentCell.swift */,
 				FA7A3CE62B20F5C900BCD2FA /* segStudentCell.xib */,
-				FA7A3CE92B21248F00BCD2FA /* segHistoryViewController.swift */,
-				FA7A3CEA2B21248F00BCD2FA /* segHistoryViewController.xib */,
+				FA280DDD2B21BAE200C4BA7D /* segAttendanceCell.swift */,
+				FA280DDE2B21BAE200C4BA7D /* segAttendanceCell.xib */,
+				FA280DE32B21E9C300C4BA7D /* StudentAttCell.swift */,
+				FA280DE42B21E9C300C4BA7D /* StudentAttCell.xib */,
+				FA280DE92B22278F00C4BA7D /* CourseAttRecTableCell.swift */,
+				FA280DEA2B22278F00C4BA7D /* CourseAttRecTableCell.xib */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -236,11 +254,17 @@
 		FA62760B2B03F569009CA02A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA7A3CEA2B21248F00BCD2FA /* segHistoryViewController.xib */,
+				FA7A3CE92B21248F00BCD2FA /* segHistoryViewController.swift */,
+				FA7A3CE22B20E75500BCD2FA /* SegStudentViewController.xib */,
+				FA7A3CE12B20E75500BCD2FA /* SegStudentViewController.swift */,
 				FA383E242B13C231007C8943 /* ViewController1.xib */,
 				FA383E232B13C231007C8943 /* ViewController1.swift */,
 				FA7A3CD72B20A78600BCD2FA /* TeacherViewController.swift */,
 				FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */,
 				FA735EFE2B172A8A003BE2FA /* SessionViewController.swift */,
+				FA280DE12B21DA0A00C4BA7D /* StudentAttRecordViewController.swift */,
+				FA280DE72B2220E600C4BA7D /* CourseAttRecordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -366,8 +390,11 @@
 				FA383E262B13C231007C8943 /* ViewController1.xib in Resources */,
 				FA02F7D22AF8169E003DF5E7 /* LaunchScreen.storyboard in Resources */,
 				FA7A3CEC2B21248F00BCD2FA /* segHistoryViewController.xib in Resources */,
+				FA280DE02B21BAE200C4BA7D /* segAttendanceCell.xib in Resources */,
 				FA7A3CE82B20F5C900BCD2FA /* segStudentCell.xib in Resources */,
+				FA280DE62B21E9C300C4BA7D /* StudentAttCell.xib in Resources */,
 				FA02F7CF2AF8169E003DF5E7 /* Assets.xcassets in Resources */,
+				FA280DEC2B22278F00C4BA7D /* CourseAttRecTableCell.xib in Resources */,
 				FA02F7CA2AF8169C003DF5E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,13 +529,18 @@
 				FA7A3CEB2B21248F00BCD2FA /* segHistoryViewController.swift in Sources */,
 				FA6276142B048750009CA02A /* MarkViewController.swift in Sources */,
 				FA7A3CDE2B20E1FF00BCD2FA /* NotificationNames.swift in Sources */,
+				FA280DDF2B21BAE200C4BA7D /* segAttendanceCell.swift in Sources */,
 				FA7A3CE72B20F5C900BCD2FA /* segStudentCell.swift in Sources */,
+				FA280DE82B2220E600C4BA7D /* CourseAttRecordViewController.swift in Sources */,
 				FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */,
+				FA280DEB2B22278F00C4BA7D /* CourseAttRecTableCell.swift in Sources */,
 				FA7A3CE32B20E75600BCD2FA /* SegStudentViewController.swift in Sources */,
 				FA735EFF2B172A8A003BE2FA /* SessionViewController.swift in Sources */,
 				FA6276112B04091D009CA02A /* CONSTANTS.swift in Sources */,
 				FA62760D2B03F57F009CA02A /* AttendanceViewController.swift in Sources */,
 				FA7A3CDC2B20A8B900BCD2FA /* Student.swift in Sources */,
+				FA280DE22B21DA0A00C4BA7D /* StudentAttRecordViewController.swift in Sources */,
+				FA280DE52B21E9C300C4BA7D /* StudentAttCell.swift in Sources */,
 				FA02F7C32AF8169C003DF5E7 /* AppDelegate.swift in Sources */,
 				FA7A3CD82B20A78700BCD2FA /* TeacherViewController.swift in Sources */,
 				FA02F7C52AF8169C003DF5E7 /* SceneDelegate.swift in Sources */,
@@ -690,6 +722,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K72HLXGD98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarkMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -697,6 +730,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -718,6 +752,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K72HLXGD98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarkMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -725,6 +760,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

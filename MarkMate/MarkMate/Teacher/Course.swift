@@ -12,6 +12,6 @@ struct Course{
     let number: String
     let semester: String
     let attendance: Int
-    //let numberOfStudents: Int?
-    //let numberOfClasses: Int?
+    var numberOfStudents: Int? = nil
+    let numberOfClasses: Int? = nil
 }
