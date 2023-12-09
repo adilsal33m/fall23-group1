@@ -91,28 +91,22 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
     @IBOutlet weak var tableView: UITableView!
     
     func didEnterData(name: String, erp: String) {
-        let newStudent = Student(name: name, erp: erp)
-        studentsData.append(newStudent)
-        tableView.reloadData()
-    }
+            let newStudent = Student(name: name, erp: erp)
+            studentsData.append(newStudent)
+            tableView.reloadData()
+        }
     
     var courses: [Course] = []
     
     var selectedCourse: Course?
     
-    func didAddCourse(course: Course) {
-        selectedCourse = course
-        print("hello \(course)")
-        courses.append(course)
-    }
-    
-    @IBAction func finishButtonTapped(_ sender: UIButton) {
-        let numberOfStudents = studentsData.count
-        NotificationCenter.default.post(name: .studentCountSending, object: nil, userInfo: ["StudentCount": numberOfStudents])
-        performSegue(withIdentifier: "segueToCourses", sender: self)
-        
-        //navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func finishButtonTapped(_ sender: UIButton) {
+//        let numberOfStudents = studentsData.count
+//        NotificationCenter.default.post(name: .studentCountSending, object: nil, userInfo: ["StudentCount": numberOfStudents])
+//        //performSegue(withIdentifier: "segueToCourses", sender: self)
+//
+//        //navigationController?.popViewController(animated: true)
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToAddStudent" {
@@ -121,11 +115,13 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
                 addStudentVC.delegate = self
             }
         }
-        if segue.identifier == "segueToCourses" {
-            if let coursesVC = segue.destination as? CoursesViewController {
-                //CoursesViewController.courses = courses
-                coursesVC.numberOfStudents = studentsData.count
-            }
+        if let coursesVC = segue.destination as? CoursesViewController {
+            //CoursesViewController.courses = courses
+            coursesVC.numberOfStudents = studentsData.count
+            let numberOfStudents = studentsData.count
+            NotificationCenter.default.post(name: .studentCountSending, object: nil, userInfo: ["StudentCount": numberOfStudents])
+            coursesVC.obervers()
+            print("Hereeee")
         }
     }
 }
@@ -187,11 +183,15 @@ class AddStudentViewController: UIViewController, AddStudentsViewControllerDeleg
     }
 
     @IBAction func SaveButtonTapped(_ sender: UIButton) {
-        addStudent()
-        printStudentData()
-        dismiss(animated: true, completion: nil)
+        if let name = StudentName.text, let erp = StudentERP.text,!name.isEmpty,!erp.isEmpty {
+            addStudent()
+            printStudentData()
+            dismiss(animated: true, completion: nil)
+        }
+        else{
+            dismiss(animated: true, completion: nil)
+        }
     }
-        
     @IBAction func AddAnotherButtonTapped(_ sender: UIButton){
         addStudent()
         clearTextFields()
@@ -291,12 +291,12 @@ class CoursesViewController:UIViewController
         coursesTableView.layer.backgroundColor = UIColor.red.cgColor
 
         //coursesTableView.register(CourseTableViewCell.self, forCellReuseIdentifier: "courseCell")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(handleNewCourseNotification(_:)), name: .newCourseAdded, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleStudentCountSent(_:)), name: .studentCountSending, object: nil)
+    }
+    
+    func obervers() {
+        
     }
     
     @objc func handleStudentCountSent(_ notification: Notification) {
@@ -305,24 +305,27 @@ class CoursesViewController:UIViewController
             lastCourse.numberOfStudents = numberOfStudents
             CoursesViewController.courses[CoursesViewController.courses.count-1] = lastCourse
         }
+        coursesTableView.reloadData()
     }
     
     @objc func handleNewCourseNotification(_ notification: Notification) {
-        print("here")
         let selectedCourse = (notification.userInfo?["newCourse"] as? Course)!
         CoursesViewController.courses.append(selectedCourse)
         print(CoursesViewController.courses)
+        coursesTableView.reloadData()
     }
     
-//    func addLineToLabel(label: UILabel) {
-//        // Creating a CALayer for the line
-//        let lineLayer = CALayer()
-//        lineLayer.frame = CGRect(x: 0, y: label.bounds.height - 1, width: label.bounds.width, height: 1)
-//        lineLayer.backgroundColor = UIColor.black.cgColor
-//
-//        // Adding the layer to the label's layer
-//        label.layer.addSublayer(lineLayer)
-//    }
+    func addLineToLabel(label: UILabel) {
+        // Creating a CALayer for the line
+        let lineLayer = CALayer()
+        lineLayer.frame = CGRect(x: 0, y: label.bounds.height - 1, width: label.bounds.width, height: 1)
+        lineLayer.backgroundColor = UIColor.black.cgColor
+
+        // Adding the layer to the label's layer
+        label.layer.addSublayer(lineLayer)
+    }
+    
+    @IBAction func unwindToCourses(_ sender: UIStoryboardSegue) {}
 }
 
 extension CoursesViewController: UITableViewDelegate, UITableViewDataSource{
