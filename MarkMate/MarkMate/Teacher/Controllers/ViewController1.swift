@@ -10,9 +10,10 @@ import MultipeerConnectivity
 import CVCalendar
 
 struct courseInfo: Codable {
-   var courseTitle: String
-   var courseERP: Int
-   var attendance_record: [Int]
+    var courseTitle: String
+    var courseERP: Int
+    var totalClasses: Int
+    var classesAttended: Int
 }
 
 
@@ -27,6 +28,8 @@ struct ColorsConfig {
 }
 
 class ViewController1: UIViewController , MCSessionDelegate, MCBrowserViewControllerDelegate, MCNearbyServiceAdvertiserDelegate {
+    
+    var receivedAttendance: [studentInfo] = []
    
    @IBAction func loadPrevious(sender: AnyObject) {
        calendarView.loadPreviousView()
@@ -48,7 +51,7 @@ class ViewController1: UIViewController , MCSessionDelegate, MCBrowserViewContro
    public var selectedDay: DayView!
    public var currentCalendar: Calendar?
    
-   var myData: courseInfo = courseInfo(courseTitle: "IOS DEV", courseERP: 3456, attendance_record: [23, 234, 23, 234, 23])
+   var myData: courseInfo = courseInfo(courseTitle: "IOS DEV", courseERP: 3456, totalClasses: 23, classesAttended: 20)
    
    override func awakeFromNib() {
        let timeZoneBias = 480 // (UTC+08:00)
@@ -70,9 +73,25 @@ class ViewController1: UIViewController , MCSessionDelegate, MCBrowserViewContro
    override func viewDidLoad() {
        super.viewDidLoad()
 
-       // Do any additional setup after loading the view.
+       NotificationCenter.default.addObserver(self, selector: #selector(handleTimeOverNotification), name: .timeOverNotification, object: nil)
        
-       
+       NotificationCenter.default.addObserver(self, selector: #selector(handleForcedEndSession), name: .forceEndSessionNotification, object: nil)
+   }
+    
+    @objc func handleForcedEndSession() {
+        AdvertiserAssisstant.stopAdvertisingPeer()
+        session.disconnect()
+        print("Stopped Hosting...")
+        statusLabel.text = "Inactive"
+        statusLabel.textColor = .red
+    }
+   
+   @objc func handleTimeOverNotification() {
+       AdvertiserAssisstant.stopAdvertisingPeer()
+       session.disconnect()
+       print("Stopped Hosting...")
+       statusLabel.text = "Inactive"
+       statusLabel.textColor = .red
    }
    
    override func viewDidLayoutSubviews() {
@@ -91,6 +110,26 @@ class ViewController1: UIViewController , MCSessionDelegate, MCBrowserViewContro
            }
        }
    }
+    
+    func sendProxyDetected(data: String, peer: MCPeerID) throws {
+        let jsonData = try encoder.encode(data)
+        do {
+            try session.send(jsonData, toPeers: [peer], with: .reliable)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func sendEnrollmentRequirement(data: String, peer: MCPeerID) throws {
+        let jsonData = try encoder.encode(data)
+        do {
+            try session.send(jsonData, toPeers: [peer], with: .reliable)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+    }
+    
+    
    
    
    
@@ -102,33 +141,20 @@ class ViewController1: UIViewController , MCSessionDelegate, MCBrowserViewContro
        statusLabel.textColor = .green
    }
    
-//    func joinSession() {
-//        let browser = MCBrowserViewController(serviceType: "demo", session: session)
-//        browser.delegate = self
-//        present(browser, animated: true)
-//    }
-   
-//    @IBAction func PressJoin(_ sender: Any) {
-//        joinSession()
-//    }
-   
    @IBAction func StartAttendance(_ sender: Any) {
        print("Hosting now...")
        startHosting()
+       NotificationCenter.default.post(name: .buttonPressedNotification, object: nil)
    }
    
    @IBAction func FinishAttendance(_ sender: Any) {
+       AdvertiserAssisstant.stopAdvertisingPeer()
        session.disconnect()
+       NotificationCenter.default.post(name: .attendanceOverNotification, object: nil)
        print("Stopped Hosting...")
        statusLabel.text = "Inactive"
        statusLabel.textColor = .red
    }
-   
-//    @IBAction func PressSend(_ sender: Any) {
-//        sendData(data: (Field?.text) ?? "Demo" )
-//    }
-   
-   
    
    
    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
@@ -147,17 +173,58 @@ class ViewController1: UIViewController , MCSessionDelegate, MCBrowserViewContro
    }
    
    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-       if let text = String(data: data, encoding: .utf8) {
-           DispatchQueue.main.async {
-               self.myLabel.text = text
+       if let text = String(data: data, encoding: .utf8),
+          let jsonData = text.data(using: .utf8),
+          let json = try? JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+           
+           let name = json["name"] as? String ?? ""
+           let erp = json["ERP"] as? String ?? ""
+           let uuid = json["uuid"] as? String ?? ""
+
+           let newStudent = studentInfo(name: name, ERP: erp, uuid: uuid)
+           var studentEnrolled = true
+           // MARK: PERFORM CHECK HERE
+           var proxy = false
+           
+           if studentEnrolled == true {
+               DispatchQueue.main.async {
+                   for student in self.receivedAttendance {
+                       if student.uuid == newStudent.uuid {
+                           proxy = true
+                           print("detected")
+                           break
+                       }
+                   }
+                   if proxy == false {
+                       self.receivedAttendance.append(newStudent)
+                       NotificationCenter.default.post(name: .newAttendanceReceived, object: nil)
+                   }
+               }
+               if proxy == false {
+                   do {
+                       try sendData(data: myData, peer: peerID)
+                   } catch {
+                       
+                   }
+               }
+               else {
+                   do {
+                       try sendProxyDetected(data: "Proxy is not permitted", peer: peerID)
+                   } catch {
+                       
+                   }
+               }
            }
-       }
-       do{
-           try sendData(data: myData, peer: peerID)
-       } catch {
+           else{
+               do {
+                   try sendEnrollmentRequirement(data: "You are not enrolled in this course. Kindly ask the teacher to enroll you.", peer: peerID)
+               } catch {
+                   
+               }
+           }
+
            
        }
-       
    }
    
    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {

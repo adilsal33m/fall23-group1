@@ -14,17 +14,51 @@
 		FA02F7C52AF8169C003DF5E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7C42AF8169C003DF5E7 /* SceneDelegate.swift */; };
 		FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7C62AF8169C003DF5E7 /* ViewController.swift */; };
 		FA02F7CA2AF8169C003DF5E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA02F7C82AF8169C003DF5E7 /* Main.storyboard */; };
-		FA02F7CD2AF8169C003DF5E7 /* MarkMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7CB2AF8169C003DF5E7 /* MarkMate.xcdatamodeld */; };
 		FA02F7CF2AF8169E003DF5E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA02F7CE2AF8169E003DF5E7 /* Assets.xcassets */; };
 		FA02F7D22AF8169E003DF5E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA02F7D02AF8169E003DF5E7 /* LaunchScreen.storyboard */; };
 		FA02F7DD2AF8169E003DF5E7 /* MarkMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7DC2AF8169E003DF5E7 /* MarkMateTests.swift */; };
 		FA02F7E72AF8169E003DF5E7 /* MarkMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */; };
 		FA02F7E92AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */; };
+		FA1797232B246819000DF51E /* StudentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1797102B246819000DF51E /* StudentRepository.swift */; };
+		FA1797242B246819000DF51E /* CourseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1797112B246819000DF51E /* CourseRepository.swift */; };
+		FA1797252B246819000DF51E /* AttendanceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1797122B246819000DF51E /* AttendanceRepository.swift */; };
+		FA1797262B246819000DF51E /* CourseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1797142B246819000DF51E /* CourseManager.swift */; };
+		FA1797272B246819000DF51E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1797162B246819000DF51E /* Session.swift */; };
+		FA1797282B246819000DF51E /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1797172B246819000DF51E /* Course.swift */; };
+		FA1797292B246819000DF51E /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1797182B246819000DF51E /* Student.swift */; };
+		FA17972A2B246819000DF51E /* MarkMate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA1797192B246819000DF51E /* MarkMate.xcdatamodeld */; };
+		FA17972B2B246819000DF51E /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17971C2B246819000DF51E /* PersistentStorage.swift */; };
+		FA17972C2B246819000DF51E /* Courses+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17971D2B246819000DF51E /* Courses+CoreDataClass.swift */; };
+		FA17972D2B246819000DF51E /* Attendance+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17971E2B246819000DF51E /* Attendance+CoreDataClass.swift */; };
+		FA17972E2B246819000DF51E /* Attendance+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17971F2B246819000DF51E /* Attendance+CoreDataProperties.swift */; };
+		FA17972F2B246819000DF51E /* Students+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1797202B246819000DF51E /* Students+CoreDataClass.swift */; };
+		FA1797302B246819000DF51E /* Courses+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1797212B246819000DF51E /* Courses+CoreDataProperties.swift */; };
+		FA1797312B246819000DF51E /* Students+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1797222B246819000DF51E /* Students+CoreDataProperties.swift */; };
+		FA280DDF2B21BAE200C4BA7D /* segAttendanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280DDD2B21BAE200C4BA7D /* segAttendanceCell.swift */; };
+		FA280DE02B21BAE200C4BA7D /* segAttendanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA280DDE2B21BAE200C4BA7D /* segAttendanceCell.xib */; };
+		FA280DE22B21DA0A00C4BA7D /* StudentAttRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280DE12B21DA0A00C4BA7D /* StudentAttRecordViewController.swift */; };
+		FA280DE52B21E9C300C4BA7D /* StudentAttCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280DE32B21E9C300C4BA7D /* StudentAttCell.swift */; };
+		FA280DE62B21E9C300C4BA7D /* StudentAttCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA280DE42B21E9C300C4BA7D /* StudentAttCell.xib */; };
+		FA280DE82B2220E600C4BA7D /* CourseAttRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280DE72B2220E600C4BA7D /* CourseAttRecordViewController.swift */; };
+		FA280DEB2B22278F00C4BA7D /* CourseAttRecTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA280DE92B22278F00C4BA7D /* CourseAttRecTableCell.swift */; };
+		FA280DEC2B22278F00C4BA7D /* CourseAttRecTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA280DEA2B22278F00C4BA7D /* CourseAttRecTableCell.xib */; };
 		FA383E252B13C231007C8943 /* ViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA383E232B13C231007C8943 /* ViewController1.swift */; };
 		FA383E262B13C231007C8943 /* ViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA383E242B13C231007C8943 /* ViewController1.xib */; };
 		FA62760D2B03F57F009CA02A /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */; };
 		FA6276112B04091D009CA02A /* CONSTANTS.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6276102B04091D009CA02A /* CONSTANTS.swift */; };
 		FA6276142B048750009CA02A /* MarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6276132B048750009CA02A /* MarkViewController.swift */; };
+		FA735EFF2B172A8A003BE2FA /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735EFE2B172A8A003BE2FA /* SessionViewController.swift */; };
+		FA7A3CD82B20A78700BCD2FA /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CD72B20A78600BCD2FA /* TeacherViewController.swift */; };
+		FA7A3CDA2B20A87000BCD2FA /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CD92B20A87000BCD2FA /* Class.swift */; };
+		FA7A3CDC2B20A8B900BCD2FA /* Learner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CDB2B20A8B900BCD2FA /* Learner.swift */; };
+		FA7A3CDE2B20E1FF00BCD2FA /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CDD2B20E1FE00BCD2FA /* NotificationNames.swift */; };
+		FA7A3CE02B20E6DB00BCD2FA /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CDF2B20E6DB00BCD2FA /* TimerView.swift */; };
+		FA7A3CE32B20E75600BCD2FA /* SegStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CE12B20E75500BCD2FA /* SegStudentViewController.swift */; };
+		FA7A3CE42B20E75600BCD2FA /* SegStudentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A3CE22B20E75500BCD2FA /* SegStudentViewController.xib */; };
+		FA7A3CE72B20F5C900BCD2FA /* segStudentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CE52B20F5C900BCD2FA /* segStudentCell.swift */; };
+		FA7A3CE82B20F5C900BCD2FA /* segStudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A3CE62B20F5C900BCD2FA /* segStudentCell.xib */; };
+		FA7A3CEB2B21248F00BCD2FA /* segHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A3CE92B21248F00BCD2FA /* segHistoryViewController.swift */; };
+		FA7A3CEC2B21248F00BCD2FA /* segHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA7A3CEA2B21248F00BCD2FA /* segHistoryViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +93,6 @@
 		FA02F7C42AF8169C003DF5E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA02F7C62AF8169C003DF5E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA02F7C92AF8169C003DF5E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FA02F7CC2AF8169C003DF5E7 /* MarkMate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MarkMate.xcdatamodel; sourceTree = "<group>"; };
 		FA02F7CE2AF8169E003DF5E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA02F7D12AF8169E003DF5E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA02F7D32AF8169E003DF5E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,11 +101,46 @@
 		FA02F7E22AF8169E003DF5E7 /* MarkMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarkMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA02F7E62AF8169E003DF5E7 /* MarkMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITests.swift; sourceTree = "<group>"; };
 		FA02F7E82AF8169E003DF5E7 /* MarkMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA1797102B246819000DF51E /* StudentRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentRepository.swift; sourceTree = "<group>"; };
+		FA1797112B246819000DF51E /* CourseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseRepository.swift; sourceTree = "<group>"; };
+		FA1797122B246819000DF51E /* AttendanceRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendanceRepository.swift; sourceTree = "<group>"; };
+		FA1797142B246819000DF51E /* CourseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseManager.swift; sourceTree = "<group>"; };
+		FA1797162B246819000DF51E /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		FA1797172B246819000DF51E /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		FA1797182B246819000DF51E /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		FA17971A2B246819000DF51E /* MarkMate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MarkMate.xcdatamodel; sourceTree = "<group>"; };
+		FA17971C2B246819000DF51E /* PersistentStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
+		FA17971D2B246819000DF51E /* Courses+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Courses+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA17971E2B246819000DF51E /* Attendance+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA17971F2B246819000DF51E /* Attendance+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Attendance+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA1797202B246819000DF51E /* Students+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Students+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FA1797212B246819000DF51E /* Courses+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Courses+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA1797222B246819000DF51E /* Students+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Students+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FA280DDD2B21BAE200C4BA7D /* segAttendanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segAttendanceCell.swift; sourceTree = "<group>"; };
+		FA280DDE2B21BAE200C4BA7D /* segAttendanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = segAttendanceCell.xib; sourceTree = "<group>"; };
+		FA280DE12B21DA0A00C4BA7D /* StudentAttRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAttRecordViewController.swift; sourceTree = "<group>"; };
+		FA280DE32B21E9C300C4BA7D /* StudentAttCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentAttCell.swift; sourceTree = "<group>"; };
+		FA280DE42B21E9C300C4BA7D /* StudentAttCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentAttCell.xib; sourceTree = "<group>"; };
+		FA280DE72B2220E600C4BA7D /* CourseAttRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAttRecordViewController.swift; sourceTree = "<group>"; };
+		FA280DE92B22278F00C4BA7D /* CourseAttRecTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseAttRecTableCell.swift; sourceTree = "<group>"; };
+		FA280DEA2B22278F00C4BA7D /* CourseAttRecTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseAttRecTableCell.xib; sourceTree = "<group>"; };
 		FA383E232B13C231007C8943 /* ViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController1.swift; sourceTree = "<group>"; };
 		FA383E242B13C231007C8943 /* ViewController1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController1.xib; sourceTree = "<group>"; };
 		FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
 		FA6276102B04091D009CA02A /* CONSTANTS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CONSTANTS.swift; sourceTree = "<group>"; };
 		FA6276132B048750009CA02A /* MarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkViewController.swift; sourceTree = "<group>"; };
+		FA735EFE2B172A8A003BE2FA /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
+		FA7A3CD72B20A78600BCD2FA /* TeacherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
+		FA7A3CD92B20A87000BCD2FA /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
+		FA7A3CDB2B20A8B900BCD2FA /* Learner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Learner.swift; sourceTree = "<group>"; };
+		FA7A3CDD2B20E1FE00BCD2FA /* NotificationNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
+		FA7A3CDF2B20E6DB00BCD2FA /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		FA7A3CE12B20E75500BCD2FA /* SegStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegStudentViewController.swift; sourceTree = "<group>"; };
+		FA7A3CE22B20E75500BCD2FA /* SegStudentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegStudentViewController.xib; sourceTree = "<group>"; };
+		FA7A3CE52B20F5C900BCD2FA /* segStudentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segStudentCell.swift; sourceTree = "<group>"; };
+		FA7A3CE62B20F5C900BCD2FA /* segStudentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = segStudentCell.xib; sourceTree = "<group>"; };
+		FA7A3CE92B21248F00BCD2FA /* segHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segHistoryViewController.swift; sourceTree = "<group>"; };
+		FA7A3CEA2B21248F00BCD2FA /* segHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = segHistoryViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +219,8 @@
 		FA02F7C12AF8169C003DF5E7 /* MarkMate */ = {
 			isa = PBXGroup;
 			children = (
+				FA17970E2B246819000DF51E /* CoreData */,
+				FA7A3CDD2B20E1FE00BCD2FA /* NotificationNames.swift */,
 				FA6276062B03F22A009CA02A /* Teacher */,
 				FA6276052B03F1F9009CA02A /* Student */,
 				FA02F7C22AF8169C003DF5E7 /* AppDelegate.swift */,
@@ -160,7 +230,6 @@
 				FA02F7CE2AF8169E003DF5E7 /* Assets.xcassets */,
 				FA02F7D02AF8169E003DF5E7 /* LaunchScreen.storyboard */,
 				FA02F7D32AF8169E003DF5E7 /* Info.plist */,
-				FA02F7CB2AF8169C003DF5E7 /* MarkMate.xcdatamodeld */,
 				FA6276102B04091D009CA02A /* CONSTANTS.swift */,
 			);
 			path = MarkMate;
@@ -183,9 +252,64 @@
 			path = MarkMateUITests;
 			sourceTree = "<group>";
 		};
+		FA17970E2B246819000DF51E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FA17970F2B246819000DF51E /* Repository */,
+				FA1797132B246819000DF51E /* Managers */,
+				FA1797152B246819000DF51E /* Models */,
+				FA1797192B246819000DF51E /* MarkMate.xcdatamodeld */,
+				FA17971B2B246819000DF51E /* SupportFiles */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FA17970F2B246819000DF51E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FA1797102B246819000DF51E /* StudentRepository.swift */,
+				FA1797112B246819000DF51E /* CourseRepository.swift */,
+				FA1797122B246819000DF51E /* AttendanceRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		FA1797132B246819000DF51E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FA1797142B246819000DF51E /* CourseManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		FA1797152B246819000DF51E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA1797162B246819000DF51E /* Session.swift */,
+				FA1797172B246819000DF51E /* Course.swift */,
+				FA1797182B246819000DF51E /* Student.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA17971B2B246819000DF51E /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FA17971C2B246819000DF51E /* PersistentStorage.swift */,
+				FA17971D2B246819000DF51E /* Courses+CoreDataClass.swift */,
+				FA17971E2B246819000DF51E /* Attendance+CoreDataClass.swift */,
+				FA17971F2B246819000DF51E /* Attendance+CoreDataProperties.swift */,
+				FA1797202B246819000DF51E /* Students+CoreDataClass.swift */,
+				FA1797212B246819000DF51E /* Courses+CoreDataProperties.swift */,
+				FA1797222B246819000DF51E /* Students+CoreDataProperties.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
 		FA6276052B03F1F9009CA02A /* Student */ = {
 			isa = PBXGroup;
 			children = (
+				FA7A3CDB2B20A8B900BCD2FA /* Learner.swift */,
 				FA6276122B04872F009CA02A /* Controllers */,
 			);
 			path = Student;
@@ -194,7 +318,17 @@
 		FA6276062B03F22A009CA02A /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
+				FA7A3CDF2B20E6DB00BCD2FA /* TimerView.swift */,
+				FA7A3CD92B20A87000BCD2FA /* Class.swift */,
 				FA62760B2B03F569009CA02A /* Controllers */,
+				FA7A3CE52B20F5C900BCD2FA /* segStudentCell.swift */,
+				FA7A3CE62B20F5C900BCD2FA /* segStudentCell.xib */,
+				FA280DDD2B21BAE200C4BA7D /* segAttendanceCell.swift */,
+				FA280DDE2B21BAE200C4BA7D /* segAttendanceCell.xib */,
+				FA280DE32B21E9C300C4BA7D /* StudentAttCell.swift */,
+				FA280DE42B21E9C300C4BA7D /* StudentAttCell.xib */,
+				FA280DE92B22278F00C4BA7D /* CourseAttRecTableCell.swift */,
+				FA280DEA2B22278F00C4BA7D /* CourseAttRecTableCell.xib */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -202,9 +336,17 @@
 		FA62760B2B03F569009CA02A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA7A3CEA2B21248F00BCD2FA /* segHistoryViewController.xib */,
+				FA7A3CE92B21248F00BCD2FA /* segHistoryViewController.swift */,
+				FA7A3CE22B20E75500BCD2FA /* SegStudentViewController.xib */,
+				FA7A3CE12B20E75500BCD2FA /* SegStudentViewController.swift */,
 				FA383E242B13C231007C8943 /* ViewController1.xib */,
 				FA383E232B13C231007C8943 /* ViewController1.swift */,
+				FA7A3CD72B20A78600BCD2FA /* TeacherViewController.swift */,
 				FA62760C2B03F57F009CA02A /* AttendanceViewController.swift */,
+				FA735EFE2B172A8A003BE2FA /* SessionViewController.swift */,
+				FA280DE12B21DA0A00C4BA7D /* StudentAttRecordViewController.swift */,
+				FA280DE72B2220E600C4BA7D /* CourseAttRecordViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -326,9 +468,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7A3CE42B20E75600BCD2FA /* SegStudentViewController.xib in Resources */,
 				FA383E262B13C231007C8943 /* ViewController1.xib in Resources */,
 				FA02F7D22AF8169E003DF5E7 /* LaunchScreen.storyboard in Resources */,
+				FA7A3CEC2B21248F00BCD2FA /* segHistoryViewController.xib in Resources */,
+				FA280DE02B21BAE200C4BA7D /* segAttendanceCell.xib in Resources */,
+				FA7A3CE82B20F5C900BCD2FA /* segStudentCell.xib in Resources */,
+				FA280DE62B21E9C300C4BA7D /* StudentAttCell.xib in Resources */,
 				FA02F7CF2AF8169E003DF5E7 /* Assets.xcassets in Resources */,
+				FA280DEC2B22278F00C4BA7D /* CourseAttRecTableCell.xib in Resources */,
 				FA02F7CA2AF8169C003DF5E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,14 +605,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA17972A2B246819000DF51E /* MarkMate.xcdatamodeld in Sources */,
+				FA1797282B246819000DF51E /* Course.swift in Sources */,
+				FA7A3CE02B20E6DB00BCD2FA /* TimerView.swift in Sources */,
 				FA383E252B13C231007C8943 /* ViewController1.swift in Sources */,
+				FA1797262B246819000DF51E /* CourseManager.swift in Sources */,
+				FA7A3CDA2B20A87000BCD2FA /* Class.swift in Sources */,
+				FA1797232B246819000DF51E /* StudentRepository.swift in Sources */,
+				FA1797252B246819000DF51E /* AttendanceRepository.swift in Sources */,
+				FA7A3CEB2B21248F00BCD2FA /* segHistoryViewController.swift in Sources */,
 				FA6276142B048750009CA02A /* MarkViewController.swift in Sources */,
+				FA7A3CDE2B20E1FF00BCD2FA /* NotificationNames.swift in Sources */,
+				FA280DDF2B21BAE200C4BA7D /* segAttendanceCell.swift in Sources */,
+				FA7A3CE72B20F5C900BCD2FA /* segStudentCell.swift in Sources */,
+				FA280DE82B2220E600C4BA7D /* CourseAttRecordViewController.swift in Sources */,
 				FA02F7C72AF8169C003DF5E7 /* ViewController.swift in Sources */,
+				FA280DEB2B22278F00C4BA7D /* CourseAttRecTableCell.swift in Sources */,
+				FA7A3CE32B20E75600BCD2FA /* SegStudentViewController.swift in Sources */,
+				FA1797302B246819000DF51E /* Courses+CoreDataProperties.swift in Sources */,
+				FA735EFF2B172A8A003BE2FA /* SessionViewController.swift in Sources */,
+				FA17972C2B246819000DF51E /* Courses+CoreDataClass.swift in Sources */,
+				FA17972E2B246819000DF51E /* Attendance+CoreDataProperties.swift in Sources */,
+				FA17972B2B246819000DF51E /* PersistentStorage.swift in Sources */,
+				FA17972D2B246819000DF51E /* Attendance+CoreDataClass.swift in Sources */,
 				FA6276112B04091D009CA02A /* CONSTANTS.swift in Sources */,
 				FA62760D2B03F57F009CA02A /* AttendanceViewController.swift in Sources */,
+				FA1797292B246819000DF51E /* Student.swift in Sources */,
+				FA7A3CDC2B20A8B900BCD2FA /* Learner.swift in Sources */,
+				FA1797312B246819000DF51E /* Students+CoreDataProperties.swift in Sources */,
+				FA280DE22B21DA0A00C4BA7D /* StudentAttRecordViewController.swift in Sources */,
+				FA17972F2B246819000DF51E /* Students+CoreDataClass.swift in Sources */,
+				FA1797272B246819000DF51E /* Session.swift in Sources */,
+				FA1797242B246819000DF51E /* CourseRepository.swift in Sources */,
+				FA280DE52B21E9C300C4BA7D /* StudentAttCell.swift in Sources */,
 				FA02F7C32AF8169C003DF5E7 /* AppDelegate.swift in Sources */,
+				FA7A3CD82B20A78700BCD2FA /* TeacherViewController.swift in Sources */,
 				FA02F7C52AF8169C003DF5E7 /* SceneDelegate.swift in Sources */,
-				FA02F7CD2AF8169C003DF5E7 /* MarkMate.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +818,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K72HLXGD98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarkMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -649,6 +826,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -670,6 +848,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K72HLXGD98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarkMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -677,6 +856,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -808,12 +988,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FA02F7CB2AF8169C003DF5E7 /* MarkMate.xcdatamodeld */ = {
+		FA1797192B246819000DF51E /* MarkMate.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FA02F7CC2AF8169C003DF5E7 /* MarkMate.xcdatamodel */,
+				FA17971A2B246819000DF51E /* MarkMate.xcdatamodel */,
 			);
-			currentVersion = FA02F7CC2AF8169C003DF5E7 /* MarkMate.xcdatamodel */;
+			currentVersion = FA17971A2B246819000DF51E /* MarkMate.xcdatamodel */;
 			path = MarkMate.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -8,15 +8,20 @@
 import UIKit
 import MultipeerConnectivity
 
+struct studentInfo: Codable{
+    let name: String
+    let ERP: String
+    var uuid: String = UIDevice.current.identifierForVendor!.uuidString
+}
+
 class MarkViewController: UIViewController , MCSessionDelegate, MCBrowserViewControllerDelegate{
    
+    let myData = studentInfo(name: "Abdur Rafae", ERP: "22828")
     
-    
-    
+    let encoder = JSONEncoder()
     var myPeerID: MCPeerID!
     var session: MCSession!
-    
-    var myData: String = ""
+
     var AdvertiserAssisstant: MCNearbyServiceAdvertiser!
     
     @IBOutlet weak var myLabel: UILabel!
@@ -32,7 +37,8 @@ class MarkViewController: UIViewController , MCSessionDelegate, MCBrowserViewCon
         session.delegate = self
     }
     
-    func sendData(data : String) {
+    func sendData(data : studentInfo) throws {
+        let jsonData = try encoder.encode(data)
         var teacher: MCPeerID!
         for peer in session.connectedPeers {
             if peer.displayName.hasPrefix("Teacher") {
@@ -41,12 +47,10 @@ class MarkViewController: UIViewController , MCSessionDelegate, MCBrowserViewCon
             }
         }
         if session.connectedPeers.count > 0 {
-            if let textData = data.data(using: .utf8){
-                do {
-                    try session.send(textData, toPeers: [teacher], with: .reliable)
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
+            do {
+                try session.send(jsonData, toPeers: [teacher], with: .reliable)
+            } catch let error as NSError {
+                print(error.localizedDescription)
             }
         }
     }
@@ -62,7 +66,11 @@ class MarkViewController: UIViewController , MCSessionDelegate, MCBrowserViewCon
     }
 
     @IBAction func PressSend(_ sender: Any) {
-        sendData(data: (Field?.text) ?? "Demo" )
+        do{
+            try sendData(data: myData)
+        } catch {
+            
+        }
     }
     
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
@@ -101,17 +109,5 @@ class MarkViewController: UIViewController , MCSessionDelegate, MCBrowserViewCon
     func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
         
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
