@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G816" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Attendance" representedClassName="Attendance" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="attendanceToCourses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Courses" inverseName="coursesToAttendance" inverseEntity="Courses"/>
+        <relationship name="attendanceToStudents" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Students" inverseName="studentsToAttendance" inverseEntity="Students"/>
+    </entity>
+    <entity name="Courses" representedClassName="Courses" syncable="YES">
+        <attribute name="attendance_requirement" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="class_nbr" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="course_name" optional="YES" attributeType="String"/>
+        <attribute name="semester" optional="YES" attributeType="String"/>
+        <relationship name="coursesToAttendance" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Attendance" inverseName="attendanceToCourses" inverseEntity="Attendance"/>
+        <relationship name="coursesToStudents" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Students" inverseName="studentsToCourses" inverseEntity="Students"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="class_nbr"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Students" representedClassName="Students" syncable="YES">
+        <attribute name="erp" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="studentsToAttendance" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Attendance" inverseName="attendanceToStudents" inverseEntity="Attendance"/>
+        <relationship name="studentsToCourses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Courses" inverseName="coursesToStudents" inverseEntity="Courses"/>
+    </entity>
+</model>

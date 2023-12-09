@@ -71,7 +71,7 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
                         let rowComponents = csvRow.components(separatedBy: ",")
 
                         if rowComponents.count > max(nameIndex, erpIndex) {
-                            let student = Student(name: rowComponents[nameIndex], erp: rowComponents[erpIndex])
+                            let student = Student(name: rowComponents[nameIndex], erp: Int32(Int(rowComponents[erpIndex])!))
                             studentsData.append(student)
                         }
                     }
@@ -91,7 +91,7 @@ class AddingStudentsViewController: UIViewController, UIDocumentPickerDelegate, 
     @IBOutlet weak var tableView: UITableView!
     
     func didEnterData(name: String, erp: String) {
-            let newStudent = Student(name: name, erp: erp)
+        let newStudent = Student(name: name, erp: Int32(erp)!)
             studentsData.append(newStudent)
             tableView.reloadData()
         }
@@ -201,7 +201,7 @@ class AddStudentViewController: UIViewController, AddStudentsViewControllerDeleg
         guard let name = StudentName.text, let erp = StudentERP.text else {
             return
         }
-        let student = Student(name: name, erp: erp)
+        let student = Student(name: name, erp: Int32(erp)!)
         delegate?.didEnterData(name: name, erp: erp)
         studentsData.append(student)
     }
@@ -226,7 +226,7 @@ class CourseTableViewCell: UITableViewCell {
     @IBOutlet weak var courseDetailsLabel: UILabel!
     @IBOutlet weak var studentsLabel: UILabel!
 
-    func configure(with course: Course) {
+    func configure(with course: Class) {
         if let nameLabel = courseNameLabel {
             nameLabel.text = course.name
             print("name set")
@@ -260,12 +260,10 @@ class CourseTableViewCell: UITableViewCell {
 
 class CoursesViewController:UIViewController
 {
-    func didAddCourse(course: Course) {
-    }
     
     @IBOutlet weak var coursesTableView: UITableView!
     
-    static var courses: [Course] = []
+    static var courses: [Class] = []
     var numberOfStudents: Int = 0
     
     @IBOutlet weak var teacherInitialsButton: UIButton!
@@ -309,7 +307,7 @@ class CoursesViewController:UIViewController
     }
     
     @objc func handleNewCourseNotification(_ notification: Notification) {
-        let selectedCourse = (notification.userInfo?["newCourse"] as? Course)!
+        let selectedCourse = (notification.userInfo?["newCourse"] as? Class)!
         CoursesViewController.courses.append(selectedCourse)
         print(CoursesViewController.courses)
         coursesTableView.reloadData()
@@ -361,14 +359,14 @@ class AddCourseViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         guard let name = courseNameTextField.text,
-              let number = courseNumberTextField.text,
+              let number = Int32(courseNumberTextField.text!),
               let semester = semesterTextField.text,
               let attendanceString = attendanceTextField.text,
-              let attendance = Int(attendanceString) else {
+              let attendance = Int32(attendanceString) else {
             return
         }
 
-        let course = Course(name: name, number: number, semester: semester, attendance: attendance)
+        let course = Course(course_nbr: number, semester: semester, course_name: name, attendance_req: attendance)
         NotificationCenter.default.post(name: .newCourseAdded, object: nil, userInfo: ["newCourse": course])
         //performSegue(withIdentifier: "segueToAddingStudents", sender: self)
     }

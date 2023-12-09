@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Course{
+struct Class{
     let name: String
     let number: String
     let semester: String
